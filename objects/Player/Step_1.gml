@@ -77,7 +77,7 @@ xvel+=(right-left)*walkspeed
 if(anim=0)and(coyote)and(right-left = 0){xvel*=.9}
 
 //gravity and coyote yo
-if(place_meeting(x,y+2,walllayer)=0)
+if(place_meeting(x,y+1,walllayer)=0)
 {
 	yvel+=grav
 	if(coyote>0){coyote-=1}
@@ -116,7 +116,7 @@ if(jumpbuffer>0)
 	}
 	else
 	{
-		if(jumps>0)//double jump
+		if(jumps>0)and(place_meeting(x,y+yvel,walllayer)=0)//double jump
 		{
 			instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
 			yvel=-10
@@ -145,15 +145,15 @@ if(anim=0)
 	else
 	{
 		sprite_index=StarairSpr
-		if yvel<2
+		if yvel>0
 		{
-			image_index=0
+			image_index=2
 		}
 		else
 		{
-			if yvel>5
+			if yvel<-4
 			{
-				image_index=2
+				image_index=0
 			}
 			else
 			{

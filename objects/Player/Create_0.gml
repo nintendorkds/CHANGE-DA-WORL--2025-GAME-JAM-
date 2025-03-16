@@ -1,3 +1,7 @@
+//controls
+jumppressed = 0
+dashpressed = 0
+
 //shader setup
 var shader = rgb_replacement
 upixelH = shader_get_uniform(shader, "pixelH");
@@ -11,6 +15,6 @@ uniformb = shader_get_uniform(shader, "bluecolor")
 
 //sets global colors for tilemap
 
+global.green=[90/255,225/255,80/255]
 global.red=[30/255,138/255,76/255]
 global.blue=[5/255,68/255,148/255]
-global.green=[90/255,225/255,80/255]

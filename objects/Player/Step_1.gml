@@ -1,4 +1,4 @@
-walllayer = layer_tilemap_get_id("Tiles_1")
+var walllayer = layer_tilemap_get_id("Tiles_1")
 
 if(controller=0)
 {
@@ -118,6 +118,7 @@ if(jumpbuffer>0)
 	{
 		if(jumps>0)and(place_meeting(x,y+yvel,walllayer)=0)//double jump
 		{
+			if(right-left!=0){image_xscale=sign(right-left)}
 			instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
 			yvel=-10
 			jumpbuffer=0
@@ -145,13 +146,13 @@ if(anim=0)
 	else
 	{
 		sprite_index=StarairSpr
-		if yvel>0
+		if yvel>1
 		{
 			image_index=2
 		}
 		else
 		{
-			if yvel<-4
+			if yvel<-3
 			{
 				image_index=0
 			}

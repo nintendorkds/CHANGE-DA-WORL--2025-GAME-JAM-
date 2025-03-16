@@ -48,8 +48,7 @@ function update_physics(_bounces=0,_playssound=0,_yvelfric=0,stepprecision=1){
 				x = x + sign(xvel)*stepprecision;
 			}
 			xvel = 0;
-			if(_bounces>0)and(abs(startxvel)>_bounces){xvel=-startxvel}
-			hitwall=1
+			if(_bounces>0)and(abs(startxvel)>_bounces){xvel=-startxvel;hitwall=1}
 		}
 	}
 	
@@ -85,10 +84,14 @@ function update_physics(_bounces=0,_playssound=0,_yvelfric=0,stepprecision=1){
 				y = y + sign(yvel)*stepprecision;
 			}
 			yvel = 0;
-			hitwall=1
 		}
 	}
 	
+	if(hitwall)
+	{
+		instance_create_depth(x+(sign(startxvel)*24),y,depth-1,particle,{image_xscale:choose(-1,1)})
+		instance_create_depth(x+(sign(startxvel)*24),y,depth-1,bubble,{xvel:(startxvel/8)+random_range(-6,6),yvel:yvel+random_range(-6,6)})
+	}
 
 	y+=yvel
 	

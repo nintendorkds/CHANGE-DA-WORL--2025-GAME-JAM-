@@ -84,8 +84,13 @@ if(place_meeting(x,y+2,walllayer)=0)
 }
 else
 {
-	yvel=0
-	coyote=6
+	if(coyote!=6)
+	{
+		jumps=3
+		instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
+		yvel=0
+		coyote=6
+	}
 }
 
 //jumping
@@ -102,10 +107,22 @@ if(jump=0)and(jumppressed)
 if(jumpbuffer>0)
 {
 	jumpbuffer-=1
-	if(coyote>0)
+	if(coyote>0)//normal jump
 	{
+		instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
+		instance_create_depth(x,y,depth,bubble,{xvel:-.5*xvel,yvel:-yvel})
 		yvel=-14
 		jumpbuffer=0
+	}
+	else
+	{
+		if(jumps>0)//double jump
+		{
+			instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
+			yvel=-10
+			jumpbuffer=0
+			jumps-=1
+		}
 	}
 }
 

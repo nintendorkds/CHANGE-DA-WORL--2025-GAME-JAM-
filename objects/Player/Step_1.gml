@@ -14,7 +14,6 @@ if(controller=0)
 		
 		primary=keyboard_check(ord("Z"));
 		secondary=keyboard_check(vk_lshift);
-		tertiary=keyboard_check(ord("V"));
 		grab=keyboard_check(ord("C"));
 		jump=keyboard_check(ord("X"));
 		pocket1=keyboard_check(vk_lcontrol);
@@ -63,8 +62,7 @@ else
 		
 	grab=gamepad_button_check(controller-1, gp_face3);
 	secondary=gamepad_button_check(controller-1, gp_face4);
-	tertiary=gamepad_button_check(controller-1, gp_face2);
-	jump=gamepad_button_check(controller-1, gp_face1);
+	jump=gamepad_button_check(controller-1, gp_face1)or gamepad_button_check(controller-1, gp_face2)
 	escape=gamepad_button_check(controller-1, gp_select);
 	start=gamepad_button_check(controller-1, gp_start);
 	grab=gamepad_button_check(controller-1, gp_shoulderrb)or gamepad_button_check(controller-1, gp_shoulderr)
@@ -113,6 +111,7 @@ if(jumpbuffer>0)
 		instance_create_depth(x,y,depth,bubble,{xvel:-.5*xvel,yvel:-yvel})
 		yvel=-14
 		jumpbuffer=0
+		jumping=1
 	}
 	else
 	{
@@ -123,7 +122,20 @@ if(jumpbuffer>0)
 			yvel=-10
 			jumpbuffer=0
 			jumps-=1
+			jumping=1
 		}
+	}
+}
+
+if(jumping)
+{
+	if(jump=0)
+	{
+		yvel*=.6
+	}
+	if(yvel>0)
+	{
+		jumping=0
 	}
 }
 

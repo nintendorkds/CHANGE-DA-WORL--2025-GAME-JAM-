@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"generate_worldcolor",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"generate_worldcolor",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

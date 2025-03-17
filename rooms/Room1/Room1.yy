@@ -8,6 +8,9 @@
   "instanceCreationOrder":[
     {"name":"inst_78775844","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_5813213","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_5264407","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_51D22C30","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_51D0DC64","path":"rooms/Room1/Room1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -16,6 +19,9 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"Player","path":"objects/Player/Player.yy",},"propertyId":{"name":"controller","path":"objects/Player/Player.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":480.0,},
         {"$GMRInstance":"v1","%Name":"inst_5813213","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5813213","objectId":{"name":"star","path":"objects/star/star.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":768.0,"y":320.0,},
+        {"$GMRInstance":"v1","%Name":"inst_5264407","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5264407","objectId":{"name":"EnemyParrotfish","path":"objects/EnemyParrotfish/EnemyParrotfish.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":736.0,"y":416.0,},
+        {"$GMRInstance":"v1","%Name":"inst_51D22C30","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_51D22C30","objectId":{"name":"EnemyParrotfish","path":"objects/EnemyParrotfish/EnemyParrotfish.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":512.0,"y":96.0,},
+        {"$GMRInstance":"v1","%Name":"inst_51D0DC64","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_51D0DC64","objectId":{"name":"EnemyCrab","path":"objects/EnemyCrab/EnemyCrab.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":352.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":20,"TileCompressedData":[
           -9,0,-2,9,-7,0,-2,-2147483648,3,0,-2147483648,-2147483648,-3,0,5,-2147483648,0,0,9,9,-9,-2147483648,

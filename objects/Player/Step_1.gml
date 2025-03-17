@@ -1,5 +1,7 @@
 var walllayer = layer_tilemap_get_id("Tiles_1")
-
+//iframes
+if(iframes>0){iframes-=1}
+//controller stuff
 if(controller=0)
 {
 		right=keyboard_check(vk_right);
@@ -86,7 +88,11 @@ if(place_meeting(x,y+1,walllayer)=0)
 }
 else
 {
-	jumps=maxjumps
+	if(jumps!=maxjumps)
+	{
+		jumps=maxjumps
+		flash=6
+	}
 	if(coyote!=6)
 	{
 		instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
@@ -172,6 +178,10 @@ if(kickbuffer>0)
 	}
 }
 
+timer+=1
+hitwall=0
+update_physics(5)
+
 //animations
 switch anim
 {
@@ -238,6 +248,7 @@ switch anim
 		
 		if(image_index>2)
 		{
+			timer=0
 			anim=2
 			kickangle=point_direction(0,0,image_xscale,clamp(down-up,-.6,.6))
 			instance_create_depth(x,y,depth,bubble,{xvel:(image_xscale*-6)+irandom_range(-3,3),yvel:(up-down)*irandom_range(4,20)})
@@ -249,17 +260,20 @@ switch anim
 		{
 			image_speed=.6
 		}
-		if(image_index>6)
+		if(image_index>6)or(hitwall)
 		{
 			anim=0
 		}
 		else
 		{
+			if(timer mod 4 = 1)
+			{
+				instance_create_depth(x,y,depth+1,afterimage,{red,green,blue,image_index,sprite_index,image_xscale})
+			}
 			xvel=lengthdir_x(12,kickangle)
 			yvel=lengthdir_y(12,kickangle)
 		}
-		if(place_meeting(x+xvel,y,walllayer)){anim=0}
 	break;
 }
 
-update_physics(5)
+if(bbox_top<0){yvel=0;y=32}

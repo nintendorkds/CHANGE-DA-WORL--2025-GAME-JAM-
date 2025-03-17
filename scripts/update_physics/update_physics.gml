@@ -94,5 +94,5 @@ function update_physics(_bounces=0,_playssound=0,_yvelfric=0,stepprecision=1){
 
 	y+=yvel
 	
-	move_wrap(1,0,0)
+	move_wrap(1,1,0)
 }

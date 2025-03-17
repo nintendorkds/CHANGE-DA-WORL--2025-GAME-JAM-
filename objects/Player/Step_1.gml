@@ -1,6 +1,14 @@
 var walllayer = layer_tilemap_get_id("Tiles_1")
 //iframes
-if(iframes>0){iframes-=1}
+if(iframes>0)
+{
+	if iframes = 115 and global.desert=0
+	{
+		var lol = layer_background_get_id("Background")
+		layer_background_blend(lol,c_black)
+	}
+	iframes-=1
+}
 //controller stuff
 if(controller=0)
 {
@@ -180,6 +188,7 @@ if(kickbuffer>0)
 
 timer+=1
 hitwall=0
+yvel=clamp(yvel,-56,56)
 update_physics(5)
 
 //animations
@@ -276,4 +285,4 @@ switch anim
 	break;
 }
 
-if(bbox_top<0){yvel=0;y=32}
+if(bbox_top<-32){yvel=0;y=0}

@@ -19,5 +19,11 @@ if(!iframes)or(floor(iframes/4) mod 2 = 0)
 		anotherme=-1
 	}
 	draw_sprite_ext(sprite_index,image_index,x+(anotherme*room_width),y,image_xscale,image_yscale,image_angle,image_blend,1)
+	anotherme=1
+	if(y>room_height/2)
+	{
+		anotherme=-1
+	}
+	draw_sprite_ext(sprite_index,image_index,x,y+(anotherme*room_height),image_xscale,image_yscale,image_angle,image_blend,1)
 	shader_reset()
 }

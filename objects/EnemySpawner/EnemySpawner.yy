@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"corpse",
+  "%Name":"EnemySpawner",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"corpse",
+  "name":"EnemySpawner",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"particle",
-    "path":"objects/particle/particle.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,18 +26,15 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"xvel","filters":[],"listItems":[],"multiselect":false,"name":"xvel","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"yvel","filters":[],"listItems":[],"multiselect":false,"name":"yvel","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"grav","filters":[],"listItems":[],"multiselect":false,"name":"grav","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":".2","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"timer","filters":[],"listItems":[],"multiselect":false,"name":"timer","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"StardieSpr",
-    "path":"sprites/StardieSpr/StardieSpr.yy",
+    "name":"bonkspr",
+    "path":"sprites/bonkspr/bonkspr.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

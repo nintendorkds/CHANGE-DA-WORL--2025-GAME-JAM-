@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"corpse",
+  "%Name":"SpawningEnemy",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"corpse",
+  "name":"SpawningEnemy",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"particle",
-    "path":"objects/particle/particle.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,18 +28,14 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"xvel","filters":[],"listItems":[],"multiselect":false,"name":"xvel","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"yvel","filters":[],"listItems":[],"multiselect":false,"name":"yvel","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"grav","filters":[],"listItems":[],"multiselect":false,"name":"grav","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":".2","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"mefr","filters":[],"listItems":[],"multiselect":false,"name":"mefr","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"EnemyCrab","path":"objects/EnemyCrab/EnemyCrab.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"EnemyCrab","varType":5,},
     {"$GMObjectProperty":"v1","%Name":"timer","filters":[],"listItems":[],"multiselect":false,"name":"timer","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"image_xscale","filters":[],"listItems":[],"multiselect":false,"name":"image_xscale","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"choose(-1,1)","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"StardieSpr",
-    "path":"sprites/StardieSpr/StardieSpr.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -8,3 +8,54 @@ if(instance_exists(Player)=0)
 	global.blue=[((global.blue[0]*ratio)+.3)/(ratio+1),((global.blue[1]*ratio)+0)/(ratio+1),((global.blue[2]*ratio)+0)/(ratio+1)]
 	global.enemycolor=[((global.enemycolor[0]*ratio)+.8)/(ratio+1),((global.enemycolor[1]*ratio)+0)/(ratio+1),((global.enemycolor[2]*ratio)+0)/(ratio+1)]
 }
+
+if(desertframes>0)
+{
+	desertframes-=1
+	if(desertframes<=0)
+	{
+		with(corpse){instance_destroy()}
+		with(bubble){instance_destroy()}
+		global.desert=0
+		var lol = layer_background_get_id("Background")
+		layer_background_blend(lol,c_black)
+		generate_worldcolor()
+		x+=9999
+	}
+}
+
+if(deadframes>=60)
+{
+	var contnum = 0
+	var pressedabutton = 0
+	var started=0
+	
+	//checks keyboards yaeahsoidyuhoaiuhoaiuhdpioujhapsd
+	if(keyboard_check(vk_anykey))
+	{
+		pressedabutton=1
+		if(pressed=0)
+		{
+			started=1
+		}
+	}
+
+	contnum+=1
+
+	//checks controleder :) jdnhfolicuhsaj dfpiudcuu
+	repeat 8
+	{
+		if(gamepad_button_check(contnum-1,gp_start))or(gamepad_button_check(contnum-1,gp_face1))or(gamepad_button_check(contnum-1,gp_face2))or(gamepad_button_check(contnum-1,gp_face3))or(gamepad_button_check(contnum-1,gp_face4))
+		{
+			pressedabutton=1
+			if(pressed=0)
+			{
+				started=1
+			}
+		}
+		contnum+=1
+	}
+	if(pressedabutton=0){pressed=0}
+	
+	if(started){room_restart()}
+}

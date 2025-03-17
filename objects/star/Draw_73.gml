@@ -9,4 +9,9 @@ if deadframes > 60
 	draw_text((room_width/2)-behinddeath[0],(room_height/2)-behinddeath[1],"YOU DIED I THINK")
 	draw_set_color(c_white)
 	draw_text((room_width/2)-(behinddeath[1]/4),(room_height/2)+(behinddeath[0]/4),"YOU DIED I THINK")
+	if(deadframes>120)
+	{
+		draw_set_font(NORMALFONT)
+		draw_text((room_width/2)+(behinddeath[1]/4),80+(room_height/2)-(behinddeath[0]/4),"PRESS ANY BUTTON TO RETRY")
+	}
 }

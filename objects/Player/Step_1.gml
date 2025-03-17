@@ -62,6 +62,7 @@ else
 		
 	grab=gamepad_button_check(controller-1, gp_face3);
 	secondary=gamepad_button_check(controller-1, gp_face4);
+	primary=gamepad_button_check(controller-1, gp_face3);
 	jump=gamepad_button_check(controller-1, gp_face1)or gamepad_button_check(controller-1, gp_face2)
 	escape=gamepad_button_check(controller-1, gp_select);
 	start=gamepad_button_check(controller-1, gp_start);
@@ -70,21 +71,24 @@ else
 
 }
 
-xvel+=(right-left)*walkspeed
+if(anim=0)
+{
+	xvel+=(right-left)*walkspeed
+}
 
 if(anim=0)and(coyote)and(right-left = 0){xvel*=.9}
 
 //gravity and coyote yo
 if(place_meeting(x,y+1,walllayer)=0)
 {
-	yvel+=grav
 	if(coyote>0){coyote-=1}
+	yvel+=grav
 }
 else
 {
+	jumps=maxjumps
 	if(coyote!=6)
 	{
-		jumps=3
 		instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
 		yvel=0
 		coyote=6
@@ -95,7 +99,7 @@ else
 if(jump)and(jumppressed=0)
 {
 	jumppressed=1
-	jumpbuffer=10
+	jumpbuffer=6
 }
 if(jump=0)and(jumppressed)
 {
@@ -105,7 +109,7 @@ if(jump=0)and(jumppressed)
 if(jumpbuffer>0)
 {
 	jumpbuffer-=1
-	if(coyote>0)//normal jump
+	if(coyote>0)and(anim=0)//normal jump
 	{
 		instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
 		instance_create_depth(x,y,depth,bubble,{xvel:-.5*xvel,yvel:-yvel})
@@ -115,11 +119,11 @@ if(jumpbuffer>0)
 	}
 	else
 	{
-		if(jumps>0)and(place_meeting(x,y+yvel,walllayer)=0)//double jump
+		if(jumps>0)and(place_meeting(x,y+yvel,walllayer)=0)and(anim=0)//double jump
 		{
 			if(right-left!=0){image_xscale=sign(right-left)}
 			instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
-			yvel=-10
+			yvel=-12
 			jumpbuffer=0
 			jumps-=1
 			jumping=1
@@ -139,41 +143,123 @@ if(jumping)
 	}
 }
 
-//animations
-if(anim=0)
+
+//kicking
+if(primary)and(kickpressed=0)
 {
-	if(coyote>0)
+	kickpressed=1
+	kickbuffer=6
+}
+if(primary=0)and(kickpressed)
+{
+	kickpressed=0
+}
+
+if(kickbuffer>0)
+{
+	kickbuffer-=1
+	if(anim=0)and(jumps>0)
 	{
-		if(right-left!=0){image_xscale=sign(right-left)}
-		if(abs(xvel)>1)
+		if(coyote<6)
 		{
-			image_speed=(xvel/6)*image_xscale
-			sprite_index=StarwalkSpr
+			coyote=0
+			jumps-=1
 		}
-		else
-		{
-			sprite_index=StaridleSpr
-		}
+		anim=1
+		kickbuffer=0
+		image_index=0
+		image_speed=0
 	}
-	else
-	{
-		sprite_index=StarairSpr
-		if yvel>1
+}
+
+//animations
+switch anim
+{
+	//normal animations
+	case 0:
+		if(coyote>0)
 		{
-			image_index=2
-		}
-		else
-		{
-			if yvel<-3
+			if(right-left!=0){image_xscale=sign(right-left)}
+			if(abs(xvel)>1)
 			{
-				image_index=0
+				image_speed=(xvel/6)*image_xscale
+				sprite_index=StarwalkSpr
 			}
 			else
 			{
-				image_index=1
+				if(down)
+				{
+					sprite_index=StarduckSpr
+				}
+				else
+				{
+					sprite_index=StaridleSpr
+				}
 			}
 		}
-	}
+		else
+		{
+			sprite_index=StarairSpr
+			if yvel>1
+			{
+				image_index=2
+			}
+			else
+			{
+				if yvel<-3
+				{
+					image_index=0
+				}
+				else
+				{
+					image_index=1
+				}
+			}
+		}
+	break;
+	//kick animation
+	case 1:
+		sprite_index=StarkickSpr
+		if(image_index=0)
+		{
+			yvel*=.9
+			if(right-left!=0){image_xscale=sign(right-left)}
+			if(primary=0)
+			{
+				image_index=1
+				image_speed=1
+				
+			}
+		}
+		else
+		{
+			yvel=0
+		}
+		
+		if(image_index>2)
+		{
+			anim=2
+			kickangle=point_direction(0,0,image_xscale,clamp(down-up,-.6,.6))
+			instance_create_depth(x,y,depth,bubble,{xvel:(image_xscale*-6)+irandom_range(-3,3),yvel:(up-down)*irandom_range(4,20)})
+		}
+	break;
+	//kick followthrough
+	case 2:
+		if(image_index>4)
+		{
+			image_speed=.6
+		}
+		if(image_index>6)
+		{
+			anim=0
+		}
+		else
+		{
+			xvel=lengthdir_x(12,kickangle)
+			yvel=lengthdir_y(12,kickangle)
+		}
+		if(place_meeting(x+xvel,y,walllayer)){anim=0}
+	break;
 }
 
 update_physics(5)

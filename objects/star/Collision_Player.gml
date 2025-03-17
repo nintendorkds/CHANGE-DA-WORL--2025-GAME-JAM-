@@ -12,18 +12,19 @@ var restrainingorder = 400
 
 while(place_meeting(x,y,walllayer) or (abs(x-avoidme.x)mod (room_width/2))<restrainingorder)
 {
-	x=irandom_range(0,39)*32
-	y=irandom_range(0,21)*32
+	x=irandom_range(1,38)*32
+	y=irandom_range(1,21)*32
 }
 
 
-if(global.score mod 7 = 6)
+if 1//(global.score mod 7 = 6)
 {
-	var color = hsv_to_rgb(irandom_range(0,359),random_range(0,1),1)
+	var color = hsv_to_rgb(irandom_range(0,359),random_range(.5,1),1)
 	global.green=[color[0],color[1],color[2]]
-	color = hsv_to_rgb(irandom_range(0,359),random_range(0,1),random_range(.5,.8))
+	color = hsv_to_rgb(irandom_range(0,359),random_range(0,1),random_range(.6,.7))
 	global.red=[color[0],color[1],color[2]]
-	color = hsv_to_rgb(irandom_range(0,359),random_range(0,1),random_range(.15,.25))
+	color = hsv_to_rgb(irandom_range(140,275),random_range(.5,1),random_range(.25,.3))
 	global.blue=[color[0],color[1],color[2]]
 }
 global.score+=1
+other.jumps=other.maxjumps

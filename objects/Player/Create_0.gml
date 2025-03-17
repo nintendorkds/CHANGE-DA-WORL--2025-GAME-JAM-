@@ -1,6 +1,8 @@
 //controls
 jumppressed = 0
-dashpressed = 0
+kickpressed = 0
+
+jump=0
 
 //shader setup
 var shader = rgb_replacement

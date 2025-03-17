@@ -17,7 +17,7 @@ function update_physics(_bounces=0,_playssound=0,_yvelfric=0,stepprecision=1){
 	var startxvel = xvel
 	var hitwall = 0
 	
-	var maxEdgeTolerance=14
+	var maxEdgeTolerance=16
 	
 	if (place_meeting(x+xvel,y,walllayer))
 	{

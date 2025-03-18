@@ -1,8 +1,9 @@
 var walllayer = layer_tilemap_get_id("Tiles_1")
+mask_index=StaridleSpr
 //iframes
 if(iframes>0)
 {
-	if iframes = 115 and global.desert=0
+	if iframes = 115
 	{
 		var lol = layer_background_get_id("Background")
 		layer_background_blend(lol,c_black)
@@ -96,6 +97,10 @@ if(place_meeting(x,y+1,walllayer)=0)
 }
 else
 {
+	if(lavacombo>0)
+	{
+		lavacombo=0
+	}
 	if(jumps!=maxjumps)
 	{
 		jumps=maxjumps
@@ -137,7 +142,7 @@ if(jumpbuffer>0)
 		{
 			if(right-left!=0){image_xscale=sign(right-left)}
 			instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
-			yvel=-12
+			yvel=-12.5
 			jumpbuffer=0
 			jumps-=1
 			jumping=1
@@ -241,7 +246,7 @@ switch anim
 		sprite_index=StarkickSpr
 		if(image_index=0)
 		{
-			yvel*=.9
+			yvel*=.85
 			if(right-left!=0){image_xscale=sign(right-left)}
 			if(primary=0)
 			{
@@ -286,3 +291,4 @@ switch anim
 }
 
 if(bbox_top<-32){yvel=0;y=0}
+mask_index=PlayerEnemyCollisionMask

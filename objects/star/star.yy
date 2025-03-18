@@ -35,6 +35,7 @@
     {"$GMObjectProperty":"v1","%Name":"behinddeath","filters":[],"listItems":[],"multiselect":false,"name":"behinddeath","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[irandom_range(-16,16),irandom_range(-16,16)]","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"pressed","filters":[],"listItems":[],"multiselect":false,"name":"pressed","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"desertframes","filters":[],"listItems":[],"multiselect":false,"name":"desertframes","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"quip","filters":[],"listItems":[],"multiselect":false,"name":"quip","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"\"GURLLP I AM EROR PLEASE REPORT TO BIG DADDY SPAMTON\"","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

@@ -1,4 +1,4 @@
-if(global.score>0)and(global.desert=0)
+if(global.stars>0)and(global.desert=0)and(instance_exists(Player))
 {
 	if(timer mod 240 = 0)
 	{

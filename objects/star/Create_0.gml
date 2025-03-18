@@ -9,10 +9,27 @@ uniformr = shader_get_uniform(shader, "redcolor")
 uniformg = shader_get_uniform(shader, "greencolor")
 uniformb = shader_get_uniform(shader, "bluecolor")
 
-global.score=0
+global.stars=0
 global.desert=0
 
 randomize()
+
+quip = choose(
+	"YOU DIED I THINK",
+	"FISHPASTE!",
+	"HE'S DEAD",
+	"TOO BAD SO SAD",
+	"KRILL ISSUE (YOU ACTUALLY DID FINE ITS OKAY)",
+	"THE WORLD REMAINED UNCHANGED",
+	"BARNACLES!",
+	"ERM... GULP",
+	"NAHT GOOD!",
+	"GONE BUT NOT FORGOTTEN",
+	"BEACHED",
+	"YOU KILLED HIM",
+	"FISH FOOD",
+	"SHIT!"
+)
 
 //sets global colors for tilemap
 

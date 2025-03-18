@@ -1,8 +1,7 @@
 shader_set(rgb_replacement)
 shader_set_uniform_f(upixelW,texelW);
 shader_set_uniform_f(upixelH,texelH);
-var brighten = -.35
-shader_set_uniform_f(uniformr,clamp(global.enemycolor[0]+brighten,0,1),clamp(global.enemycolor[1]+brighten,0,1),clamp(global.enemycolor[2]+brighten,0,1),1.0);
+shader_set_uniform_f(uniformr,global.enemycolor2[0],global.enemycolor2[1],global.enemycolor2[2],1.0);
 shader_set_uniform_f(uniformg,global.enemycolor[0],global.enemycolor[1],global.enemycolor[2],1.0);
 shader_set_uniform_f(uniformb,global.red[0],global.red[1],global.red[2],1.0);
 

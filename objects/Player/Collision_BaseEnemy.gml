@@ -1,19 +1,27 @@
 if(global.desert)
 {
 	instance_create_depth(x,y,depth-1,particle,{image_xscale:choose(-1,1)})
+	if(jumps!=maxjumps)
+	{
+		jumps=maxjumps
+		flash=6
+	}
 	with other
 	{
-		var brighten = -.35
 		instance_create_depth(x,y,depth,corpse,
 		{
 			sprite_index,
-			red:[clamp(global.enemycolor[0]+brighten,0,1),clamp(global.enemycolor[1]+brighten,0,1),clamp(global.enemycolor[2]+brighten,0,1)],
+			red:[global.enemycolor2[0],global.enemycolor2[1],global.enemycolor2[2]],
 			green:[global.enemycolor[0],global.enemycolor[1],global.enemycolor[2]],
 			blue:[global.red[0],global.red[1],global.red[2]],
 			yvel:-8
 		})
 		instance_destroy()
 	}
+	//increments score
+	lavacombo+=1
+	var val = 100*lavacombo
+	instance_create_depth(other.x,other.y,depth+1,scorenumbers,{value:val})
 }
 else
 {

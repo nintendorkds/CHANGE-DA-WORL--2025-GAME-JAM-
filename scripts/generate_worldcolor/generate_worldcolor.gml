@@ -11,6 +11,8 @@ function generate_worldcolor(){
 	global.green=[color[0],color[1],color[2]]
 	var color = hsv_to_rgb((myhue+180)mod 360,mysat,1)
 	global.enemycolor=[color[0],color[1],color[2]]
+	var color = hsv_to_rgb((myhue+180+(choose(-1,0,0,1,-2,2)*20))mod 360,clamp(mysat+(choose(0,0,0,1)*.15),0,1),.6)
+	global.enemycolor2=[color[0],color[1],color[2]]
 	color = hsv_to_rgb(irandom_range(0,359),random_range(0,1),random_range(.45,.55))
 	global.red=[color[0],color[1],color[2]]
 	color = hsv_to_rgb(irandom_range(140,275),random_range(.5,1),random_range(.25,.3))

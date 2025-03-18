@@ -12,6 +12,8 @@ uniformb = shader_get_uniform(shader, "bluecolor")
 global.score=0
 global.desert=0
 
+randomize()
+
 //sets global colors for tilemap
 
 //global.green=[90/255,225/255,80/255]

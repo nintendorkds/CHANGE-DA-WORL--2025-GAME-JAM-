@@ -28,10 +28,10 @@ if(global.desert=0)
 		global.desert=1
 		desertframes=330
 		var divby = 2
-		global.red=[global.red[0]/divby,global.red[1]/divby,global.red[2]/divby]
-		global.blue=[global.green[0]/divby,global.green[1]/divby,global.green[2]/divby]
-		global.green=[global.blue[0]/divby,global.blue[1]/divby,global.blue[2]/divby]
-		global.enemycolor=[global.enemycolor[0]/divby,global.enemycolor[1]/divby,global.enemycolor[2]/divby]
+		global.red=[0,0,0]//[global.red[0]/divby,global.red[1]/divby,global.red[2]/divby]
+		global.blue=[0,0,0]//[global.green[0]/divby,global.green[1]/divby,global.green[2]/divby]
+		global.green=[0,0,0]//[global.blue[0]/divby,global.blue[1]/divby,global.blue[2]/divby]
+		global.enemycolor=[0,0,0]
 	}
 	global.score+=1
 	other.jumps=other.maxjumps

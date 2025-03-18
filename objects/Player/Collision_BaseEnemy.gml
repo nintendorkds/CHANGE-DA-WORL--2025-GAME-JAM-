@@ -3,7 +3,7 @@ if(global.desert)
 	instance_create_depth(x,y,depth-1,particle,{image_xscale:choose(-1,1)})
 	with other
 	{
-		var brighten = -.3
+		var brighten = -.35
 		instance_create_depth(x,y,depth,corpse,
 		{
 			sprite_index,

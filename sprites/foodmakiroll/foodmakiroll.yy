@@ -12,14 +12,14 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"fab52d72-623e-4e0d-b3ad-954f5ad4e0b8","name":"fab52d72-623e-4e0d-b3ad-954f5ad4e0b8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"8e198d9d-fdbc-456f-ad72-3842efcc53b6","name":"8e198d9d-fdbc-456f-ad72-3842efcc53b6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"38c5b51b-04e8-4a3b-8f8e-248708dcaac7","blendMode":0,"displayName":"default","isLocked":false,"name":"38c5b51b-04e8-4a3b-8f8e-248708dcaac7","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"d698d66a-a891-456c-ba59-a33bbc8c28b3","blendMode":0,"displayName":"default","isLocked":false,"name":"d698d66a-a891-456c-ba59-a33bbc8c28b3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"foodmakiroll",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fab52d72-623e-4e0d-b3ad-954f5ad4e0b8","path":"sprites/foodmakiroll/foodmakiroll.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"baa066d9-83f7-4068-90b9-8247fa48ac8c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8e198d9d-fdbc-456f-ad72-3842efcc53b6","path":"sprites/foodmakiroll/foodmakiroll.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"48a02bb6-bdbd-428d-88c7-884c8ac134d6","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

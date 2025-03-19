@@ -130,6 +130,7 @@ if(jumpbuffer>0)
 	jumpbuffer-=1
 	if(coyote>0)and(anim=0)//normal jump
 	{
+		play_sound(soundjump,.15)
 		instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
 		instance_create_depth(x,y,depth,bubble,{xvel:-.5*xvel,yvel:-yvel})
 		yvel=-14
@@ -140,6 +141,7 @@ if(jumpbuffer>0)
 	{
 		if(jumps>0)and(place_meeting(x,y+yvel,walllayer)=0)and(anim=0)//double jump
 		{
+			play_sound(soundjump,.15)
 			if(right-left!=0){image_xscale=sign(right-left)}
 			instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
 			yvel=-12.5
@@ -262,6 +264,7 @@ switch anim
 		
 		if(image_index>2)
 		{
+			play_sound(fuckn,.15)
 			timer=0
 			anim=2
 			kickangle=point_direction(0,0,image_xscale,clamp(down-up,-.6,.6))

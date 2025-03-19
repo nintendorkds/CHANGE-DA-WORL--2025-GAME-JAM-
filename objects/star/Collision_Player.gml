@@ -9,6 +9,7 @@ if(global.desert=0)
 	var walllayer = layer_tilemap_get_id("Tiles_1")
 	
 	//increments score
+	play_sound(soundcombo,0,1,power(2, (other.lavacombo*2)/12))
 	other.lavacombo+=1
 	var val = 100*other.lavacombo
 	other.points+=val
@@ -16,6 +17,7 @@ if(global.desert=0)
 	//increments stars
 	if(global.stars mod 10 = 9)
 	{
+		play_sound(soundportalopen)
 		with(SpawningEnemy){instance_destroy()}
 		with(BaseEnemy){sprite_index=foodsprite}
 		x-=9999

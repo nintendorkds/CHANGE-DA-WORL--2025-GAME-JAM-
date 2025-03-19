@@ -18,7 +18,9 @@ if(global.desert)
 		})
 		instance_destroy()
 	}
+	play_sound(soundhit,.2)
 	//increments score
+	play_sound(soundcombo,0,1,power(2, (lavacombo*2)/12))
 	lavacombo+=1
 	var val = 100*lavacombo
 	instance_create_depth(other.x,other.y,depth+1,scorenumbers,{value:val})

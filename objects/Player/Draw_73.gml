@@ -11,9 +11,18 @@ if(jumps!=maxjumps)
 }
 draw_set_font(NORMALFONT)
 draw_set_halign(fa_left)
-draw_set_valign(fa_center)
+draw_set_valign(fa_middle)
 draw_set_color(c_white)
 draw_text(32,688,points)
 
 draw_set_halign(fa_right)
 draw_text(1280-32,688,string(global.stars)+"/32")
+
+draw_set_font(SMALLFONT)
+draw_set_color(c_ltgray)
+draw_set_halign(fa_left)
+var tempstr = ""
+if(lavacombo>1){tempstr=string(lavacombo)+"X"}
+draw_text(32,648,"POINTS:"+tempstr)
+draw_set_halign(fa_right)
+draw_text(1280-32,648,"STARS:")

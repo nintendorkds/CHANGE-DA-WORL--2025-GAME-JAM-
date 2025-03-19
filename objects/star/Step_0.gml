@@ -15,6 +15,7 @@ if(desertframes>0)
 	desertframes-=1
 	if(desertframes<=0)or(instance_exists(BaseEnemy)=0)
 	{
+		play_sound(soundportalclose)
 		desertframes=0
 		with(EnemySpawner){timer=0}
 		with(BaseEnemy){sprite_index=object_get_sprite(object_index)}

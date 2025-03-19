@@ -6,7 +6,9 @@
   ],
   "managed":true,
   "name":"EnemyParrotfish",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"BaseEnemy","path":"objects/BaseEnemy/BaseEnemy.yy",},"propertyId":{"name":"foodsprite","path":"objects/BaseEnemy/BaseEnemy.yy",},"resource":{"name":"foodmakiroll","path":"sprites/foodmakiroll/foodmakiroll.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"foodmakiroll",},
+  ],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",

@@ -19,7 +19,7 @@ quip = choose(
 	"FISHPASTE!",
 	"HE'S DEAD",
 	"TOO BAD SO SAD",
-	"KRILL ISSUE (YOU ACTUALLY DID FINE ITS OKAY)",
+	"KRILL ISSUE",
 	"THE WORLD REMAINED UNCHANGED",
 	"BARNACLES!",
 	"ERM... GULP",
@@ -28,7 +28,7 @@ quip = choose(
 	"BEACHED",
 	"YOU KILLED HIM",
 	"FISH FOOD",
-	"SHIT!"
+	"YOU'RE CHUM, CHUM"
 )
 
 //sets global colors for tilemap

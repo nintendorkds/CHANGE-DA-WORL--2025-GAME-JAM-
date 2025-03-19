@@ -1,6 +1,6 @@
 if(global.desert)
 {
-	instance_create_depth(x,y,depth-1,particle,{image_xscale:choose(-1,1)})
+	instance_create_depth(other.x,other.y,other.depth-1,particle,{image_xscale:choose(-1,1)})
 	if(jumps!=maxjumps)
 	{
 		jumps=maxjumps
@@ -33,8 +33,8 @@ else
 		if(men>0)
 		{
 			var dir = point_direction(x,y,other.x,other.y)
-			xvel=lengthdir_x(-16,dir)
-			yvel=lengthdir_y(-16,dir)
+			xvel=lengthdir_x(-12,dir)
+			yvel=lengthdir_y(-12,dir)
 			jumping=0
 			men-=1
 			anim=0

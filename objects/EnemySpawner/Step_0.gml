@@ -1,6 +1,6 @@
 if(global.stars>0)and(global.desert=0)and(instance_exists(Player))
 {
-	if(timer mod 240 = 0)
+	if(timer mod (240-(global.stars*2)) = 0)
 	{
 		var walllayer = layer_tilemap_get_id("Tiles_1")
 		var chosenenemy = choose(EnemyCrab,EnemyParrotfish,EnemyJellyfish)

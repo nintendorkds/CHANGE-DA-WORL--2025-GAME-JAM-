@@ -6,7 +6,9 @@
   ],
   "managed":true,
   "name":"EnemyJellyfish",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"BaseEnemy","path":"objects/BaseEnemy/BaseEnemy.yy",},"propertyId":{"name":"foodsprite","path":"objects/BaseEnemy/BaseEnemy.yy",},"resource":{"name":"foodmaki","path":"sprites/foodmaki/foodmaki.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"foodmaki",},
+  ],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",

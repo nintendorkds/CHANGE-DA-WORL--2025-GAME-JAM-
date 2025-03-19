@@ -22,11 +22,11 @@ if(global.desert=0)
 		global.desert=1
 		desertframes=360
 		var divby = 2
-		global.red=[1,84/255,84/255]//[global.red[0]/divby,global.red[1]/divby,global.red[2]/divby]
-		global.blue=[92/255,.2,0]//[global.green[0]/divby,global.green[1]/divby,global.green[2]/divby]
-		global.green=[1,.8,0]//[global.blue[0]/divby,global.blue[1]/divby,global.blue[2]/divby]
-		global.enemycolor=[1,227/255,228/255]
-		global.enemycolor2=[1,148/255,102/255]
+		global.red=[106/255,106/255,106/255]
+		global.blue=[92/255,.2,0]
+		global.green=[1,.8,0]
+		global.enemycolor=[1,1,1]
+		global.enemycolor2=[1,60/255,25/255]
 	}
 	global.stars+=1
 	if(other.jumps!=other.maxjumps)
@@ -39,7 +39,7 @@ if(global.desert=0)
 
 	var restrainingorder = 300
 
-	while place_meeting(x,y,walllayer) or (abs(x-avoidme.x)<restrainingorder or abs((x+(room_width/2))-avoidme.x)<restrainingorder)
+	while place_meeting(x,y,walllayer) or place_meeting(x,y,SpawningEnemy) or place_meeting(x,y,BaseEnemy) or (abs(x-avoidme.x)<restrainingorder or abs((x+(room_width/2))-avoidme.x)<restrainingorder)
 	{
 		x=irandom_range(1,38)*32
 		y=irandom_range(1,21)*32

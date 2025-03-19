@@ -193,7 +193,7 @@ if(kickbuffer>0)
 
 timer+=1
 hitwall=0
-yvel=clamp(yvel,-56,56)
+yvel=clamp(yvel,-40,40)
 update_physics(5)
 
 //animations

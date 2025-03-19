@@ -29,7 +29,7 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"depth","filters":[],"listItems":[],"multiselect":false,"name":"depth","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"98","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"foodsprite","filters":[],"listItems":[],"multiselect":false,"name":"foodsprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"shrimpspr","path":"sprites/shrimpspr/shrimpspr.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"shrimpspr","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"foodsprite","filters":[],"listItems":[],"multiselect":false,"name":"foodsprite","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"foodnigiri","path":"sprites/foodnigiri/foodnigiri.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"foodnigiri","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

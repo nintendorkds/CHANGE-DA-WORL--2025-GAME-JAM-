@@ -88,6 +88,7 @@ function update_physics(_bounces=0,_playssound=0,_yvelfric=0,stepprecision=1){
 	
 	if(hitwall)
 	{
+		play_sound(soundbump,.2)
 		instance_create_depth(x+(sign(startxvel)*24),y,depth-1,particle,{image_xscale:choose(-1,1)})
 		instance_create_depth(x+(sign(startxvel)*24),y,depth-1,bubble,{xvel:(startxvel/8)+random_range(-6,6),yvel:yvel+random_range(-6,6)})
 	}

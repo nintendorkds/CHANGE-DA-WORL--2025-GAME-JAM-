@@ -27,6 +27,7 @@ quip = choose(
 	"GONE BUT NOT FORGOTTEN",
 	"BEACHED",
 	"YOU KILLED HIM",
+	"STUPID WHALE!",
 	"FISH FOOD",
 	"YOU'RE CHUM, CHUM"
 )

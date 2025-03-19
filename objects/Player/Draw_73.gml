@@ -6,7 +6,7 @@ if(jumps!=maxjumps)
 	shader_set_uniform_f(uniformr,red[0],red[1],red[2],1.0);
 	shader_set_uniform_f(uniformg,green[0],green[1],green[2],1.0);
 	shader_set_uniform_f(uniformb,blue[0],blue[1],blue[2],1.0);
-	draw_sprite_ext(JumpsSpr,jumps,x-xvel,y-yvel,image_xscale,1,0,c_white,1)
+	draw_sprite_ext(JumpsSpr,jumps,x-xvel-(40*image_xscale),y-yvel,-1,1,0,c_white,1)
 	shader_reset()
 }
 draw_set_font(NORMALFONT)

@@ -22,7 +22,17 @@ if(desertframes>0)
 		with(bubble){instance_destroy()}
 		global.desert=0
 		generate_worldcolor()
-		x+=9999
+		var walllayer = layer_tilemap_get_id("Tiles_1")
+		var avoidme = instance_nearest(x,y,Player)
+
+		var restrainingorder = 300
+		x=irandom_range(1,38)*32
+		y=irandom_range(1,21)*32
+		while place_meeting(x,y,walllayer) or place_meeting(x,y,SpawningEnemy) or place_meeting(x,y,BaseEnemy) or (abs(x-avoidme.x)<restrainingorder or abs((x+(room_width/2))-avoidme.x)<restrainingorder)
+		{
+			x=irandom_range(1,38)*32
+			y=irandom_range(1,21)*32
+		}
 	}
 }
 

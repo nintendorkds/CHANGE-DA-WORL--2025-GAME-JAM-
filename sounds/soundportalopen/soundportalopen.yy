@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.447771,
+  "duration":1.188125,
   "name":"soundportalopen",
   "parent":{
     "name":"Sounds",

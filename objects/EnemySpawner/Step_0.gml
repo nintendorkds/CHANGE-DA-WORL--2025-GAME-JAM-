@@ -7,7 +7,7 @@ if(global.stars>0)and(global.desert=0)and(instance_exists(Player))
 		mask_index=object_get_mask(chosenenemy)
 		x=(irandom_range(1,18)*64)+32
 		y=(irandom_range(1,9)*64)+32
-		while(place_meeting(x,y,walllayer))
+		while place_meeting(x,y,walllayer) or place_meeting(x,y,BaseEnemy) or place_meeting(x,y,star) or place_meeting(x,y,SpawningEnemy) or place_meeting(x,y,Player)
 		{
 			x=(irandom_range(1,18)*64)+32
 			y=(irandom_range(1,9)*64)+32

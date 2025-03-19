@@ -3,9 +3,9 @@ if(bbox_top>room_height)
 	instance_destroy()
 }
 
-timer-=30
+timer-=20
 
-image_angle=round(timer/90)*90
+image_angle=timer
 
 x+=xvel
 y+=yvel

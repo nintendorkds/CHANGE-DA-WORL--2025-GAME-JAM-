@@ -11,16 +11,18 @@ if(global.desert)
 		instance_create_depth(x,y,depth,corpse,
 		{
 			sprite_index,
-			red:[global.enemycolor2[0],global.enemycolor2[1],global.enemycolor2[2]],
-			green:[global.enemycolor[0],global.enemycolor[1],global.enemycolor[2]],
-			blue:[global.red[0],global.red[1],global.red[2]],
-			yvel:-8
+			red:[global.enemycolor2[0]/2,global.enemycolor2[1]/2,global.enemycolor2[2]/2],
+			green:[global.enemycolor[0]/2,global.enemycolor[1]/2,global.enemycolor[2]/2],
+			blue:[global.red[0]/2,global.red[1]/2,global.red[2]/2],
+			yvel:-8,
+			grav:.8
 		})
 		instance_destroy()
 	}
 	play_sound(soundhit,.2)
 	//increments score
-	play_sound(soundcombo,0,1,power(2, (lavacombo*2)/12))
+	playcombosound(lavacombo)
+	combowleeway=4
 	lavacombo+=1
 	var val = 100*lavacombo
 	instance_create_depth(other.x,other.y,depth+1,scorenumbers,{value:val})
@@ -34,6 +36,7 @@ else
 		layer_background_blend(lol,make_color_rgb(30,0,0))
 		if(men>0)
 		{
+			play_sound(soundhurt,.3)
 			var dir = point_direction(x,y,other.x,other.y)
 			xvel=lengthdir_x(-12,dir)
 			yvel=lengthdir_y(-12,dir)
@@ -44,6 +47,7 @@ else
 		}
 		else
 		{
+			play_sound(sounddeath,.1)
 			instance_create_depth(x,y,depth,corpse,{sprite_index:StardieSpr,red,green,blue,xvel,yvel:yvel-8})
 			instance_destroy()
 		}

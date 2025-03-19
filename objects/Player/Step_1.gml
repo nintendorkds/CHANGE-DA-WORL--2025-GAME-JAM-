@@ -97,9 +97,17 @@ if(place_meeting(x,y+1,walllayer)=0)
 }
 else
 {
-	if(lavacombo>0)
+	if(lavacombo>0)and(anim!=2)
 	{
-		lavacombo=0
+		if(comboleeway>0)
+		{
+			comboleeway-=1
+		}
+		else
+		{
+			play_sound(soundcomboend,.2)
+			lavacombo=0
+		}
 	}
 	if(jumps!=maxjumps)
 	{
@@ -195,7 +203,7 @@ if(kickbuffer>0)
 
 timer+=1
 hitwall=0
-yvel=clamp(yvel,-40,40)
+yvel=clamp(yvel,-32,32)
 update_physics(5)
 
 //animations
@@ -264,7 +272,7 @@ switch anim
 		
 		if(image_index>2)
 		{
-			play_sound(fuckn,.15)
+			play_sound(soundkick,.15)
 			timer=0
 			anim=2
 			kickangle=point_direction(0,0,image_xscale,clamp(down-up,-.6,.6))

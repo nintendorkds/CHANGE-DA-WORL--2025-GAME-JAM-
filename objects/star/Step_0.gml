@@ -46,6 +46,20 @@ if(global.desert>0)
 		
 		if(global.stars>=32)
 		{
+			play_sound(soundhit,.2)
+			with BaseEnemy
+			{
+				instance_create_depth(x,y,depth,corpse,
+				{
+					sprite_index,
+					red:[global.enemycolor2[0]/2,global.enemycolor2[1]/2,global.enemycolor2[2]/2],
+					green:[global.enemycolor[0]/2,global.enemycolor[1]/2,global.enemycolor[2]/2],
+					blue:[global.red[0]/2,global.red[1]/2,global.red[2]/2],
+					yvel:-8,
+					grav:.8
+				})
+				instance_destroy()
+			}
 			instance_destroy()
 			exit
 		}
@@ -98,5 +112,9 @@ if(deadframes>=60)
 	}
 	if(pressedabutton=0){pressed=0}
 	
-	if(started){room_restart()}
+	if(started)
+	{
+		with(quitter){instance_change(Player,0);men=3;lavacombo=0}
+		room_restart()
+	}
 }

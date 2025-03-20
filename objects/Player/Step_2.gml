@@ -2,7 +2,6 @@ var lol = layer_get_id("Tiles_1")
 layer_script_begin(lol,applyfuckingshader)
 layer_script_end(lol,applyfuckingshaderend)
 
-
 var here = instance_place(x,y,BaseEnemy)
 var anotherme=1
 if(x>room_width/2)
@@ -15,7 +14,7 @@ if(y>room_height/2)
 {
 	anotherme=-1
 }
-if(here=noone){here=instance_place(x+(anotherme*room_width),y,BaseEnemy)}
+if(here=noone){here=instance_place(x,y+(anotherme*room_height),BaseEnemy)}
 
 
 if(here!=noone)
@@ -73,7 +72,7 @@ if(here!=noone)
 			{
 				play_sound(sounddeath,.1)
 				instance_create_depth(x,y,depth,corpse,{sprite_index:StardieSpr,red,green,blue,xvel,yvel:yvel-8})
-				instance_destroy()
+				instance_change(quitter,0)
 			}
 		}
 	}

@@ -182,7 +182,7 @@ if(jumping)
 if(primary)and(kickpressed=0)
 {
 	kickpressed=1
-	kickbuffer=6
+	kickbuffer=10
 }
 if(primary=0)and(kickpressed)
 {

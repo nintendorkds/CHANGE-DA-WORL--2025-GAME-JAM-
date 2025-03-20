@@ -2,12 +2,13 @@ if(global.desert>0){exit}
 var walllayer = layer_tilemap_get_id("Tiles_1")
 if(started)
 {
-	var spode = 3
+	var spode = 3+(white*2)
 	if(wait>0){wait-=1}
+	
 	repeat spode
 	{
-		var transx = lengthdir_x(32,image_angle-90)
-		var transy = lengthdir_y(32,image_angle-90)
+		var transx = lengthdir_x(64,image_angle-90)
+		var transy = lengthdir_y(64,image_angle-90)
 		if wait=0 && !collision_rectangle((x-32)+transx,(y-32)+transy,(x+32)+transx,(y+32)+transy,walllayer,1,0)
 		{
 			image_angle+=image_xscale*-90
@@ -25,7 +26,7 @@ if(started)
 }
 else
 {
-	repeat 3
+	repeat 4
 	{
 		if(place_meeting(x,y+1,walllayer))
 		{

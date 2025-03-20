@@ -2,14 +2,22 @@ var lol = layer_get_id("Tiles_1")
 layer_script_begin(lol,applyfuckingshader)
 layer_script_end(lol,applyfuckingshaderend)
 
+
+var here = instance_place(x,y,BaseEnemy)
 var anotherme=1
 if(x>room_width/2)
 {
 	anotherme=-1
 }
-
-var here = instance_place(x,y,BaseEnemy)
 if(here=noone){here=instance_place(x+(anotherme*room_width),y,BaseEnemy)}
+anotherme=1
+if(y>room_height/2)
+{
+	anotherme=-1
+}
+if(here=noone){here=instance_place(x+(anotherme*room_width),y,BaseEnemy)}
+
+
 if(here!=noone)
 {
 	if(global.desert>0)

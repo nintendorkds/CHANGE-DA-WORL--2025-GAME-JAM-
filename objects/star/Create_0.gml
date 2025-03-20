@@ -48,3 +48,10 @@ var lol = layer_background_get_id("Background")
 layer_background_blend(lol,c_black)
 
 generate_worldcolor()
+
+var tempx= x
+var tempy= y
+var walllayer = layer_tilemap_get_id("Tiles_1")
+spawnenemy(walllayer)
+x = tempx
+y = tempy

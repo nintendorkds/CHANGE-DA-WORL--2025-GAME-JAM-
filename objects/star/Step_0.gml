@@ -46,7 +46,7 @@ if(global.desert>0)
 		generate_worldcolor()
 		var walllayer = layer_tilemap_get_id("Tiles_1")
 		var avoidme = instance_nearest(x,y,Player)
-
+		spawnenemy(walllayer)
 		var restrainingorder = 300
 		x=(irandom_range(1,38)*32)+8
 		y=(irandom_range(1,21)*32)+8

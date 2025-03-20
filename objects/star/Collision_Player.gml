@@ -16,8 +16,6 @@ if(global.desert<=0)
 	global.points+=val
 	instance_create_depth(x+16,y,depth+1,scorenumbers,{value:val})
 	
-	spawnenemy(walllayer)
-	
 	//increments stars
 	if(global.stars mod 8 = 6)
 	{
@@ -42,7 +40,7 @@ if(global.desert<=0)
 	else
 	{
 		var avoidme = instance_nearest(x,y,Player)
-
+		spawnenemy(walllayer)
 		var restrainingorder = 300
 		x=(irandom_range(1,38)*32)+8
 		y=(irandom_range(1,21)*32)+8

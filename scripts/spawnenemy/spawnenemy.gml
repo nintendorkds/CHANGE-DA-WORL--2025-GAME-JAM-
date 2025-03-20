@@ -1,7 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function spawnenemy(_walllayer){
-	
+	var whiteinherit = 0
+	if(global.stars mod 4 = 1)
+	{
+		whiteinherit = 1
+	}
 	var chosenenemy = choose(EnemyCrab,EnemyParrotfish,EnemyJellyfish)
 	x=(irandom_range(1,18)*64)+32
 	y=(irandom_range(1,9)*64)+32
@@ -13,5 +17,5 @@ function spawnenemy(_walllayer){
 		x=(irandom_range(1,18)*64)+32
 		y=(irandom_range(1,9)*64)+32
 	}
-	instance_create_depth(x,y,depth,SpawningEnemy,{mefr:chosenenemy})
+	instance_create_depth(x,y,depth,SpawningEnemy,{mefr:chosenenemy,white:whiteinherit})
 }

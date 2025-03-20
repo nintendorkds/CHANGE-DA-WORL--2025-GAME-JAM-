@@ -11,6 +11,7 @@ uniformb = shader_get_uniform(shader, "bluecolor")
 
 global.stars=0
 global.desert=0
+global.points=0
 
 randomize()
 

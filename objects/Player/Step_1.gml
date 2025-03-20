@@ -94,6 +94,7 @@ if(place_meeting(x,y+1,walllayer)=0)
 {
 	if(coyote>0){coyote-=1}
 	yvel+=grav
+	comboleeway=4
 }
 else
 {
@@ -105,7 +106,10 @@ else
 		}
 		else
 		{
-			play_sound(soundcomboend,.2)
+			if(lavacombo>1)
+			{
+				play_sound(soundcomboend,.2)
+			}
 			lavacombo=0
 		}
 	}

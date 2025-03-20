@@ -14,11 +14,11 @@ if(global.desert=0)
 	}
 	
 	//increments score
-	other.combowleeway=4
 	playcombosound(other.lavacombo)
 	other.lavacombo+=1
 	var val = 100*other.lavacombo
 	other.points+=val
+	global.points+=val
 	instance_create_depth(x+16,y,depth+1,scorenumbers,{value:val})
 	//increments stars
 	if(global.stars mod 8 = 7)

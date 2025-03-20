@@ -22,9 +22,10 @@ if(global.desert)
 	play_sound(soundhit,.2)
 	//increments score
 	playcombosound(lavacombo)
-	combowleeway=4
 	lavacombo+=1
 	var val = 100*lavacombo
+	global.points+=val
+	points+=val
 	instance_create_depth(other.x,other.y,depth+1,scorenumbers,{value:val})
 }
 else

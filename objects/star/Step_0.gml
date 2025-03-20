@@ -10,14 +10,36 @@ if(instance_exists(Player)=0)
 	global.enemycolor2=[((global.enemycolor2[0]*ratio)+.5)/(ratio+1),((global.enemycolor2[1]*ratio)+0)/(ratio+1),((global.enemycolor2[2]*ratio)+0)/(ratio+1)]
 }
 
-if(desertframes>0)
+if(sprite_index=portalspr)
 {
-	desertframes-=1
-	if(desertframes<=0)or(instance_exists(BaseEnemy)=0)
+	image_angle+=9
+	if(image_angle mod 72 = 0)
 	{
+		instance_create_depth(x+irandom_range(-32,32),y+irandom_range(-32,32),depth-1,particle,{red,blue,green,sprite_index:stargetspr})
+	}
+}
+
+if(global.desert>0)
+{
+	global.desert-=1
+	if(global.desert=70)
+	{
+		play_sound(soundwarning,.2)
+	}
+	if(global.desert mod 2 = 0)
+	{
+		var tempr = [global.red[0]/3,global.red[1]/3,global.red[2]/3]
+		var tempg = [global.green[0]/3,global.green[1]/3,global.green[2]/3]
+		var tempb = [global.blue[0]/3,global.blue[1]/3,global.blue[2]/3]
+		instance_create_depth((irandom_range(0,20)*64)+32,(irandom_range(0,11)*64)+32,101,particle,{red:tempr,blue:tempb,green:tempg,sprite_index:stargetspr,image_speed:.6})
+	}
+	if(global.desert<=0)or(instance_exists(BaseEnemy)=0)
+	{
+		with(particle)
+		{
+			if(sprite_index=stargetspr){instance_destroy()}
+		}
 		play_sound(soundportalclose)
-		desertframes=0
-		with(EnemySpawner){timer=0}
 		with(BaseEnemy){sprite_index=object_get_sprite(object_index)}
 		with(bubble){instance_destroy()}
 		global.desert=0
@@ -26,12 +48,12 @@ if(desertframes>0)
 		var avoidme = instance_nearest(x,y,Player)
 
 		var restrainingorder = 300
-		x=irandom_range(1,38)*32
-		y=irandom_range(1,21)*32
+		x=(irandom_range(1,38)*32)+8
+		y=(irandom_range(1,21)*32)+8
 		while place_meeting(x,y,walllayer) or place_meeting(x,y,SpawningEnemy) or place_meeting(x,y,BaseEnemy) or (abs(x-avoidme.x)<restrainingorder or abs((x+(room_width/2))-avoidme.x)<restrainingorder)
 		{
-			x=irandom_range(1,38)*32
-			y=irandom_range(1,21)*32
+			x=(irandom_range(1,38)*32)+8
+			y=(irandom_range(1,21)*32)+8
 		}
 	}
 }

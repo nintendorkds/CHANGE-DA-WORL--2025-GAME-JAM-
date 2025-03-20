@@ -94,7 +94,7 @@ if(place_meeting(x,y+1,walllayer)=0)
 {
 	if(coyote>0){coyote-=1}
 	yvel+=grav
-	comboleeway=4
+	comboleeway=3
 }
 else
 {
@@ -108,6 +108,7 @@ else
 		{
 			if(lavacombo>1)
 			{
+				instance_create_depth(x,y-16,depth+1,scorenumbers,{value:"oh..."})
 				play_sound(soundcomboend,.2)
 			}
 			lavacombo=0
@@ -231,7 +232,14 @@ switch anim
 				}
 				else
 				{
-					sprite_index=StaridleSpr
+					if(up)
+					{
+						sprite_index=StarlookupSpr
+					}
+					else
+					{
+						sprite_index=StaridleSpr
+					}
 				}
 			}
 		}

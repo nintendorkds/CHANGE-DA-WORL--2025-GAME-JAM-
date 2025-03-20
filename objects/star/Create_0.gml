@@ -13,6 +13,10 @@ global.stars=0
 global.desert=0
 global.points=0
 
+green=Player.green
+red=Player.red
+blue=Player.blue
+
 randomize()
 
 quip = choose(
@@ -20,7 +24,7 @@ quip = choose(
 	"FISHPASTE!",
 	"HE'S DEAD",
 	"TOO BAD SO SAD",
-	"KRILL ISSUE",
+	"NEED FLOATIES?",
 	"THE WORLD REMAINED UNCHANGED",
 	"BARNACLES!",
 	"ERM... GULP",

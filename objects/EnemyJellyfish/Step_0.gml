@@ -1,4 +1,4 @@
-if(global.desert){exit}
+if(global.desert>0){exit}
 var walllayer = layer_tilemap_get_id("Tiles_1")
 if(place_meeting(x,y-(image_yscale*vel),walllayer))
 {

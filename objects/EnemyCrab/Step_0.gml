@@ -7,12 +7,13 @@ if(started)
 	
 	repeat spode
 	{
-		var transx = lengthdir_x(64,image_angle-90)
-		var transy = lengthdir_y(64,image_angle-90)
-		if wait=0 && !collision_rectangle((x-32)+transx,(y-32)+transy,(x+32)+transx,(y+32)+transy,walllayer,1,0)
+		var transx = lengthdir_x(1,image_angle-90)
+		var transy = lengthdir_y(1,image_angle-90)
+		if !collision_rectangle((x-32)+transx,(y-32)+transy,(x+32)+transx,(y+32)+transy,walllayer,1,0)
 		{
 			image_angle+=image_xscale*-90
-			wait=5
+			x+=lengthdir_x(1*image_xscale,image_angle)
+			y+=lengthdir_y(1*image_xscale,image_angle)
 		}
 		var transx = lengthdir_x(1*image_xscale,image_angle)
 		var transy = lengthdir_y(1*image_xscale,image_angle)

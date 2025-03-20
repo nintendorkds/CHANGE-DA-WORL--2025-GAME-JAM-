@@ -2,9 +2,24 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function spawnenemy(_walllayer){
 	var whiteinherit = 0
-	if(global.stars mod 4 = 1)
+	
+	if(global.stars >= 8)
 	{
-		whiteinherit = 1
+		if(global.stars >= 16)
+		{
+			if(global.stars >= 24)
+			{
+				whiteinherit=1
+			}
+			else
+			{
+				if(global.stars mod 2 = 0){whiteinherit=1}
+			}
+		}
+		else
+		{
+			if(global.stars mod 4 = 0){whiteinherit=1}
+		}
 	}
 	var chosenenemy = choose(EnemyCrab,EnemyParrotfish,EnemyJellyfish)
 	x=(irandom_range(1,18)*64)+32

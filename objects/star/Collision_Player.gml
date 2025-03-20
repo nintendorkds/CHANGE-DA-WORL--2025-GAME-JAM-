@@ -1,5 +1,12 @@
 if(global.desert<=0)
 {
+	global.stars+=1
+	if(other.jumps!=other.maxjumps)
+	{
+		other.jumps=other.maxjumps
+		other.flash=6
+	}
+	
 	var tempr = [global.red[1],global.red[2],global.red[0]]
 	var tempg = [global.green[1],global.green[2],global.green[0]]
 	var tempb = [global.blue[1],global.blue[2],global.blue[0]]
@@ -17,11 +24,11 @@ if(global.desert<=0)
 	instance_create_depth(x+16,y,depth+1,scorenumbers,{value:val})
 	
 	//increments stars
-	if(global.stars mod 8 = 6)
+	if(global.stars mod 8 = 7)
 	{
 		sprite_index=portalspr
 	}
-	if(global.stars mod 8 = 7)
+	if(global.stars mod 8 = 0)
 	{
 		image_angle=0
 		sprite_index=starspr
@@ -50,12 +57,4 @@ if(global.desert<=0)
 			y=(irandom_range(1,21)*32)+8
 		}
 	}
-	
-	global.stars+=1
-	if(other.jumps!=other.maxjumps)
-	{
-		other.jumps=other.maxjumps
-		other.flash=6
-	}
-
 }

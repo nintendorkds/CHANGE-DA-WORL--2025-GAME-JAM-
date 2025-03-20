@@ -40,10 +40,17 @@ if(global.desert>0)
 			if(sprite_index=stargetspr){instance_destroy()}
 		}
 		play_sound(soundportalclose)
+		generate_worldcolor()
 		with(BaseEnemy){sprite_index=object_get_sprite(object_index)}
 		with(bubble){instance_destroy()}
+		
+		if(global.stars>=32)
+		{
+			instance_destroy()
+			exit
+		}
+		
 		global.desert=0
-		generate_worldcolor()
 		var walllayer = layer_tilemap_get_id("Tiles_1")
 		var avoidme = instance_nearest(x,y,Player)
 		spawnenemy(walllayer)

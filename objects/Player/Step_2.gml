@@ -66,6 +66,7 @@ if(here!=noone)
 				jumping=0
 				men-=1
 				anim=0
+				charge=0
 				iframes=120
 			}
 			else

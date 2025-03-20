@@ -14,3 +14,5 @@ texelH = texture_get_texel_height(sprite_get_texture(sprite_index,0));
 uniformr = shader_get_uniform(shader, "redcolor")
 uniformg = shader_get_uniform(shader, "greencolor")
 uniformb = shader_get_uniform(shader, "bluecolor")
+
+#macro chargethresh 40

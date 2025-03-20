@@ -9,6 +9,9 @@ if(jumps!=maxjumps)
 	draw_sprite_ext(JumpsSpr,jumps,x-xvel-(40*image_xscale),y-yvel,-1,1,0,c_white,1)
 	shader_reset()
 }
+
+if(room=Title){exit}
+
 draw_set_font(NORMALFONT)
 draw_set_halign(fa_left)
 draw_set_valign(fa_middle)

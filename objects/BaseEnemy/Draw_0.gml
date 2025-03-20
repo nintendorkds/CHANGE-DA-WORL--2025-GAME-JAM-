@@ -30,10 +30,14 @@ else
 }
 
 var tempspr = sprite_index
+var tempys = image_yscale
+var tempxs = image_xscale
 
-if global.desert>0 and global.desert<70 and (floor(global.desert/8)mod 2 = 1)
+if global.desert>0
 {
-	sprite_index=object_get_sprite(object_index)
+	if global.desert<70 and (floor(global.desert/8)mod 2 = 1){sprite_index=object_get_sprite(object_index)}
+	image_yscale=1
+	image_xscale=1
 }
 
 draw_self()
@@ -52,3 +56,5 @@ draw_sprite_ext(sprite_index,image_index,x,y+(anotherme*room_height),image_xscal
 shader_reset()
 
 sprite_index=tempspr
+image_yscale=tempys
+image_xscale=tempxs

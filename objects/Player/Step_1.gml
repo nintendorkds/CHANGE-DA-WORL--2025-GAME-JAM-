@@ -268,6 +268,18 @@ switch anim
 		sprite_index=StarkickSpr
 		if(image_index=0)
 		{
+			charge+=1
+			if(charge mod 4 = 1 and charge>=chargethresh)
+			{
+				tempr=[red[0]/2,red[1]/2,red[2]/2]
+				tempg=[green[0]/2,green[1]/2,green[2]/2]
+				tempb=[blue[0]/2,blue[1]/2,blue[2]/2]
+				instance_create_depth(x,y,depth+1,afterimage,{red:tempr,green:tempg,blue:tempb,image_index,sprite_index,image_xscale})
+			}
+			if(charge=chargethresh)
+			{
+				play_sound(soundcharged,.1,1,.7)
+			}
 			yvel*=.85
 			if(right-left!=0){image_xscale=sign(right-left)}
 			if(primary=0)
@@ -293,6 +305,12 @@ switch anim
 	break;
 	//kick followthrough
 	case 2:
+		var tempspeede = 12
+		if charge > chargethresh
+		{
+			tempspeede=17
+			charge+=1
+		}
 		if(image_index>4)
 		{
 			image_speed=.6
@@ -300,6 +318,7 @@ switch anim
 		if(image_index>6)or(hitwall)
 		{
 			anim=0
+			charge=0
 		}
 		else
 		{
@@ -307,8 +326,8 @@ switch anim
 			{
 				instance_create_depth(x,y,depth+1,afterimage,{red,green,blue,image_index,sprite_index,image_xscale})
 			}
-			xvel=lengthdir_x(12,kickangle)
-			yvel=lengthdir_y(12,kickangle)
+			xvel=lengthdir_x(tempspeede,kickangle)
+			yvel=lengthdir_y(tempspeede,kickangle)
 		}
 	break;
 }

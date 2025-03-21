@@ -39,6 +39,7 @@
     {"$GMObjectProperty":"v1","%Name":"red","filters":[],"listItems":[],"multiselect":false,"name":"red","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[0,0,0]","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"green","filters":[],"listItems":[],"multiselect":false,"name":"green","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[0,0,0]","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"blue","filters":[],"listItems":[],"multiselect":false,"name":"blue","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"[0,0,0]","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"timer","filters":[],"listItems":[],"multiselect":false,"name":"timer","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

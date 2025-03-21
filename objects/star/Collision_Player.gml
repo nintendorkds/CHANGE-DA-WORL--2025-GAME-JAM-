@@ -34,15 +34,17 @@ if(global.desert<=0)
 		sprite_index=starspr
 		play_sound(soundportalopen)
 		with(SpawningEnemy){instance_change(mefr,1)}
+		with(bubble){visible=0}
 		with(BaseEnemy){sprite_index=foodsprite}
-		x-=9999
-		global.desert=370
-		var divby = 2
 		global.red=[Player.red[0]/2,Player.red[1]/2,Player.red[2]/2]
 		global.blue=[Player.blue[0]/4,Player.blue[1]/4,Player.blue[2]/4]
 		global.green=Player.green
 		global.enemycolor=[1,1,1]
 		global.enemycolor2=[1,60/255,25/255]
+		instance_create_depth(x,0,depth+199,particle,{red,blue:[global.green[0]/3,global.green[1]/3,global.green[2]/3],green,sprite_index:portalopenspr,maxframes:10})
+		instance_create_depth(x,0,depth+199,particle,{red,blue:[global.green[0]/3,global.green[1]/3,global.green[2]/3],green,sprite_index:portalopenspr,maxframes:10,image_xscale:-1})
+		x-=9999
+		global.desert=370
 	}
 	else
 	{

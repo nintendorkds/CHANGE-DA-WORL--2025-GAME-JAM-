@@ -10,6 +10,12 @@ if(instance_exists(Player)=0)
 	global.enemycolor2=[((global.enemycolor2[0]*ratio)+.5)/(ratio+1),((global.enemycolor2[1]*ratio)+0)/(ratio+1),((global.enemycolor2[2]*ratio)+0)/(ratio+1)]
 }
 
+timer=(timer+1) mod 30
+if timer = 0
+{
+	instance_create_depth(irandom_range(0,room_width),room_height,depth,bubble)
+}
+
 if(sprite_index=portalspr)
 {
 	image_angle+=9
@@ -33,8 +39,9 @@ if(global.desert>0)
 		var tempb = [global.blue[0]/3,global.blue[1]/3,global.blue[2]/3]
 		instance_create_depth((irandom_range(0,20)*64)+32,(irandom_range(0,11)*64)+32,101,particle,{red:tempr,blue:tempb,green:tempg,sprite_index:stargetspr,image_speed:.6})
 	}
-	if(global.desert<=0)or(instance_exists(BaseEnemy)=0)
+	if(global.desert<=0)or(instance_exists(BaseEnemy)=0) //end of sushi time
 	{
+		with(bubble){visible=1}
 		with(particle)
 		{
 			if(sprite_index=stargetspr){instance_destroy()}
@@ -43,9 +50,12 @@ if(global.desert>0)
 		generate_worldcolor()
 		with(BaseEnemy){sprite_index=object_get_sprite(object_index)}
 		with(bubble){instance_destroy()}
-		
+		x+=9999
+		instance_create_depth(x,0,depth+199,particle,{red,blue:[global.green[0]/3,global.green[1]/3,global.green[2]/3],green,sprite_index:portalopenspr,maxframes:10,image_index:9,image_speed:-2})
+		instance_create_depth(x,0,depth+199,particle,{red,blue:[global.green[0]/3,global.green[1]/3,global.green[2]/3],green,sprite_index:portalopenspr,maxframes:10,image_index:9,image_speed:-2,image_xscale:-1})
 		if(global.stars>=32)
 		{
+			instance_create_depth(x,y,depth,grader,{enemiesremaining:instance_number(BaseEnemy)})
 			play_sound(soundhit,.2)
 			with BaseEnemy
 			{

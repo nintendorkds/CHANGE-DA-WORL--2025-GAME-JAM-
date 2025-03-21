@@ -29,6 +29,8 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"depth","filters":[],"listItems":[],"multiselect":false,"name":"depth","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"110","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"myroom","filters":[],"listItems":[],"multiselect":false,"name":"myroom","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Room1","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"hiscore","filters":[],"listItems":[],"multiselect":false,"name":"hiscore","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

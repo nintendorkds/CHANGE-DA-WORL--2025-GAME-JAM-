@@ -306,11 +306,6 @@ switch anim
 	//kick followthrough
 	case 2:
 		var tempspeede = 12
-		if charge > chargethresh
-		{
-			tempspeede=17
-			charge+=1
-		}
 		if(image_index>4)
 		{
 			image_speed=.6
@@ -324,7 +319,7 @@ switch anim
 		{
 			if(timer mod 4 = 1)
 			{
-				instance_create_depth(x,y,depth+1,afterimage,{red,green,blue,image_index,sprite_index,image_xscale})
+				instance_create_depth(x,y,depth+1,afterimage,{red,green,blue,image_index:floor(image_index),sprite_index,image_xscale})
 			}
 			xvel=lengthdir_x(tempspeede,kickangle)
 			yvel=lengthdir_y(tempspeede,kickangle)

@@ -1,1 +1,1 @@
-room_restart()
+global.stars=99

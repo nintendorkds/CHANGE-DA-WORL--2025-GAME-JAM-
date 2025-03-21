@@ -5,6 +5,10 @@ shader_set_uniform_f(uniformr,red[0],red[1],red[2],1.0);
 shader_set_uniform_f(uniformg,green[0],green[1],green[2],1.0);
 shader_set_uniform_f(uniformb,blue[0],blue[1],blue[2],1.0);
 draw_self()
+if(sprite_index=portalopenspr)
+{
+	shader_reset();exit
+}
 var anotherme=1
 if(x>room_width/2)
 {

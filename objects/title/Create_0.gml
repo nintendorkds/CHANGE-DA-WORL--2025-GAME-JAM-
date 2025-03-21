@@ -1,3 +1,4 @@
+window_set_size(browser_width, browser_height );
 global.green=[90/255,225/255,80/255]
 global.enemycolor=[90/255,225/255,80/255]
 global.enemycolor2=[90/255,225/255,80/255]

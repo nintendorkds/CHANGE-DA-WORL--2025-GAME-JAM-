@@ -280,7 +280,7 @@ switch anim
 			{
 				play_sound(soundcharged,.1,1,.7)
 			}
-			yvel*=.85
+			if(yvel>0){yvel*=.85}
 			if(right-left!=0){image_xscale=sign(right-left)}
 			if(primary=0)
 			{

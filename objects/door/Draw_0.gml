@@ -42,4 +42,6 @@ if(place_meeting(x,y,Player))
 	if hiscore = 0 {tempstring="-";tempcolor=c_gray}
 	draw_set_color(tempcolor)
 	draw_text(x,y-160,"RANK: "+tempstring)
+	draw_set_color(c_white)
+	draw_text(x,y-192,room_get_name(myroom))
 }

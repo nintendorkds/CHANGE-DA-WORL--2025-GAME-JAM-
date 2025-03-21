@@ -1,6 +1,6 @@
 timer+=1
 
-if(timer=300)
+if(timer=360)
 {
 	ini_open("options.ini")
 	var temphs = ini_read_real("ROOMSAVES", room_get_name(room), 0);

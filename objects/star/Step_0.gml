@@ -51,8 +51,8 @@ if(global.desert>0)
 		with(BaseEnemy){sprite_index=object_get_sprite(object_index)}
 		with(bubble){instance_destroy()}
 		x+=9999
-		instance_create_depth(x,0,depth+199,particle,{red,blue:[global.green[0]/3,global.green[1]/3,global.green[2]/3],green,sprite_index:portalopenspr,maxframes:10,image_index:9,image_speed:-2})
-		instance_create_depth(x,0,depth+199,particle,{red,blue:[global.green[0]/3,global.green[1]/3,global.green[2]/3],green,sprite_index:portalopenspr,maxframes:10,image_index:9,image_speed:-2,image_xscale:-1})
+		instance_create_depth(x,0,depth+199,particle,{red,blue:[global.green[0]/3,global.green[1]/3,global.green[2]/3],green,sprite_index:portalclosespr,maxframes:10})
+		instance_create_depth(x,0,depth+199,particle,{red,blue:[global.green[0]/3,global.green[1]/3,global.green[2]/3],green,sprite_index:portalclosespr,maxframes:10,image_xscale:-1})
 		if(global.stars>=32)
 		{
 			instance_create_depth(x,y,depth,grader,{enemiesremaining:instance_number(BaseEnemy)})

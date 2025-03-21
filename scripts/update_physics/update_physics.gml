@@ -35,7 +35,7 @@ function update_physics(_bounces=0,_playssound=0,_yvelfric=0,stepprecision=1){
 		            foundgap = true;
 		            break;
 		        } else {
-		            yoff+=.01; //no gap, increase the offset by .01
+		            yoff+=1; //no gap, increase the offset by 1
 		        }
 		    }
 	    }
@@ -71,7 +71,7 @@ function update_physics(_bounces=0,_playssound=0,_yvelfric=0,stepprecision=1){
 		            foundgap = true;
 		            break;
 		        } else {
-		            xoff+=.01; //no gap, increase the offset by .01
+		            xoff+=1; //no gap, increase the offset by 1
 		        }
 		    }
 	    }

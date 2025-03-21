@@ -1,19 +1,15 @@
 timer+=1
 
-if(timer>=300)
+if(timer=300)
 {
-	var filename = string(room)+".sav"
-
-	var file = file_text_open_read(filename)
-	var temphs = file_text_read_real(file)
-	file_text_close(file)
+	ini_open("options.ini")
+	var temphs = ini_read_real("ROOMSAVES", room_get_name(room), 0);
 	
-	if(temphs<global.points)
+	if(temphs<global.points)or(is_numeric(temphs))
 	{
-		var file = file_text_open_write(filename)
-		file_text_write_real(file,global.points)
-		file_text_close(file)
+		ini_write_real("ROOMSAVES", room_get_name(room), global.points)
 	}
+	ini_close()
 
 	room_goto(Title)
 }

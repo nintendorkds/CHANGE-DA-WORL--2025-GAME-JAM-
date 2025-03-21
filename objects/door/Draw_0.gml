@@ -13,7 +13,7 @@ if(place_meeting(x,y,Player))
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_middle)
 	draw_set_color(c_white)
-	draw_text(x,y-128,hiscore)
+	draw_text(x,y-128,"SCORE: "+string(hiscore))
 	var tempstring = "D"
 	var tempcolor = c_red
 	switch grade_get(hiscore)
@@ -39,6 +39,7 @@ if(place_meeting(x,y,Player))
 			tempcolor = c_aqua
 		break;
 	}
+	if hiscore = 0 {tempstring="-";tempcolor=c_gray}
 	draw_set_color(tempcolor)
-	draw_text(x,y-160,tempstring)
+	draw_text(x,y-160,"RANK: "+tempstring)
 }

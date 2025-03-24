@@ -13,8 +13,10 @@ if(place_meeting(x,y,Player))
 	draw_set_halign(fa_center)
 	draw_set_valign(fa_middle)
 	draw_set_color(c_white)
-	draw_text(x,y-128,"SCORE: "+string(hiscore))
-	var tempstring = "D"
+	var tempstring = string(hiscore)
+	if(hiscore=0){tempstring="-"}
+	draw_text(x,y-128,"SCORE: "+tempstring)
+	tempstring = "D"
 	var tempcolor = c_red
 	switch grade_get(hiscore)
 	{

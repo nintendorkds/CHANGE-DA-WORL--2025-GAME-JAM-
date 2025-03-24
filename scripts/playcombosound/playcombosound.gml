@@ -57,6 +57,6 @@ function playcombosound(_combo){
 		break;
 	}
 	
-	play_sound(combosound,0,1,power(2, (pitch)/12))
+	play_sound(combosound,0,.4,power(2, (pitch)/12))
 	
 }

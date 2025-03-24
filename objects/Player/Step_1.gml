@@ -71,15 +71,27 @@ else
 		rsdown=0
 	}
 		
-	grab=gamepad_button_check(controller-1, gp_face3);
-	secondary=gamepad_button_check(controller-1, gp_face4);
-	primary=gamepad_button_check(controller-1, gp_face3);
+	primary=gamepad_button_check(controller-1, gp_face3)or gamepad_button_check(controller-1, gp_face4);
 	jump=gamepad_button_check(controller-1, gp_face1)or gamepad_button_check(controller-1, gp_face2)
 	escape=gamepad_button_check(controller-1, gp_select);
 	start=gamepad_button_check(controller-1, gp_start);
 	grab=gamepad_button_check(controller-1, gp_shoulderrb)or gamepad_button_check(controller-1, gp_shoulderr)
 	pocket1=gamepad_button_check(controller-1, gp_shoulderlb)or gamepad_button_check(controller-1, gp_shoulderl)
 
+}
+
+if(start)
+{
+	if(startpressed=0)
+	{
+		startpressed=1
+		instance_deactivate_all(0)
+		instance_create_depth(x,y,depth,pauser)
+	}
+}
+else
+{
+	startpressed=0
 }
 
 if(anim=0)
@@ -108,8 +120,17 @@ else
 		{
 			if(lavacombo>1)
 			{
-				instance_create_depth(x,y-16,depth+1,scorenumbers,{value:"oh..."})
-				play_sound(soundcomboend,.2)
+				if(lavacombo=64)
+				{
+					instance_create_depth(x,y-16,depth+1,scorenumbers,{value:"YEAH!"})
+					play_sound(soundcombocomplete,.1)
+					play_sound(soundapplause,.1)
+				}
+				else
+				{
+					instance_create_depth(x,y-16,depth+1,scorenumbers,{value:"oh..."})
+					play_sound(soundcomboend,.2)
+				}
 			}
 			lavacombo=0
 		}
@@ -141,26 +162,30 @@ if(jump=0)and(jumppressed)
 if(jumpbuffer>0)
 {
 	jumpbuffer-=1
-	if(coyote>0)and(anim=0)//normal jump
+	if(anim!=2)
 	{
-		play_sound(soundjump,.15)
-		instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
-		instance_create_depth(x,y,depth,bubble,{xvel:-.5*xvel,yvel:-yvel})
-		yvel=-14
-		jumpbuffer=0
-		jumping=1
-	}
-	else
-	{
-		if(jumps>0)and(place_meeting(x,y+yvel,walllayer)=0)and(anim=0)//double jump
+		if(anim=1){anim=0; if charge<chargethresh{charge=0}}
+		if(coyote>0)//normal jump
 		{
 			play_sound(soundjump,.15)
-			if(right-left!=0){image_xscale=sign(right-left)}
 			instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
-			yvel=-12.5
+			instance_create_depth(x,y,depth,bubble,{xvel:-.5*xvel,yvel:-yvel})
+			yvel=-14
 			jumpbuffer=0
-			jumps-=1
 			jumping=1
+		}
+		else
+		{
+			if(jumps>0)and(place_meeting(x,y+yvel,walllayer)=0)and(anim=0)//double jump
+			{
+				play_sound(soundjump,.15)
+				if(right-left!=0){image_xscale=sign(right-left)}
+				instance_create_depth(x,y,depth+1,particle,{sprite_index:jumpeffectspr,red:global.red,green:global.green,blue:global.blue})
+				yvel=-12.5
+				jumpbuffer=0
+				jumps-=1
+				jumping=1
+			}
 		}
 	}
 }
@@ -192,13 +217,8 @@ if(primary=0)and(kickpressed)
 if(kickbuffer>0)
 {
 	kickbuffer-=1
-	if(anim=0)and(jumps>0)
+	if(anim=0)
 	{
-		if(coyote<6)
-		{
-			coyote=0
-			jumps-=1
-		}
 		anim=1
 		kickbuffer=0
 		image_index=0
@@ -210,6 +230,8 @@ timer+=1
 hitwall=0
 yvel=clamp(yvel,-32,32)
 update_physics(5)
+
+if(charge>=chargethresh){charge+=1}
 
 //animations
 switch anim
@@ -268,7 +290,7 @@ switch anim
 		sprite_index=StarkickSpr
 		if(image_index=0)
 		{
-			charge+=1
+			if(charge<chargethresh){charge+=1}
 			if(charge mod 4 = 1 and charge>=chargethresh)
 			{
 				tempr=[red[0]/2,red[1]/2,red[2]/2]
@@ -296,16 +318,31 @@ switch anim
 		
 		if(image_index>2)
 		{
-			play_sound(soundkick,.15)
-			timer=0
-			anim=2
-			kickangle=point_direction(0,0,image_xscale,clamp(down-up,-.6,.6))
-			instance_create_depth(x,y,depth,bubble,{xvel:(image_xscale*-6)+irandom_range(-3,3),yvel:(up-down)*irandom_range(4,20)})
+			if(jumps>=1)or(coyote=6)
+			{
+				if(coyote<6)
+				{
+					coyote=0
+					jumps-=1
+				}
+				play_sound(soundkick,.15)
+				timer=0
+				anim=2
+				kickangle=point_direction(0,0,image_xscale,clamp(down-up,-.6,.6))
+				instance_create_depth(x,y,depth,bubble,{xvel:(image_xscale*-6)+irandom_range(-3,3),yvel:(up-down)*irandom_range(4,20)})
+			}
+			else
+			{
+				xvel=image_xscale*6
+				anim=0
+				charge=0
+			}
 		}
 	break;
 	//kick followthrough
 	case 2:
 		var tempspeede = 12
+		if(charge>=chargethresh){tempspeede+=5}
 		if(image_index>4)
 		{
 			image_speed=.6

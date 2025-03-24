@@ -12,6 +12,8 @@ uniformb = shader_get_uniform(shader, "bluecolor")
 global.stars=0
 global.desert=0
 global.points=0
+global.pointhop=0
+global.starhop=0
 
 green=Player.green
 red=Player.red

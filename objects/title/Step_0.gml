@@ -1,6 +1,6 @@
 var dontmakeme = []
 var contnum = 0
-
+window_set_size(browser_width, browser_height );
 with(Player)
 {
 	array_push(dontmakeme,controller)

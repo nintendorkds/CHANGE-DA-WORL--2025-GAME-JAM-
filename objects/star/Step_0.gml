@@ -9,9 +9,8 @@ if(instance_exists(Player)=0)
 	global.enemycolor=[((global.enemycolor[0]*ratio)+1)/(ratio+1),((global.enemycolor[1]*ratio)+0)/(ratio+1),((global.enemycolor[2]*ratio)+0)/(ratio+1)]
 	global.enemycolor2=[((global.enemycolor2[0]*ratio)+.5)/(ratio+1),((global.enemycolor2[1]*ratio)+0)/(ratio+1),((global.enemycolor2[2]*ratio)+0)/(ratio+1)]
 }
-
-timer=(timer+1) mod 30
-if timer = 0
+timer+=1
+if timer mod 60 = 0
 {
 	instance_create_depth(irandom_range(0,room_width),room_height,depth,bubble)
 }
@@ -23,6 +22,15 @@ if(sprite_index=portalspr)
 	{
 		instance_create_depth(x+irandom_range(-32,32),y+irandom_range(-32,32),depth-1,particle,{red,blue,green,sprite_index:stargetspr})
 	}
+}
+
+if(global.starhop>0)
+{
+	global.starhop-=1
+}
+if(global.pointhop>0)
+{
+	global.pointhop-=1
 }
 
 if(global.desert>0)
@@ -41,6 +49,14 @@ if(global.desert>0)
 	}
 	if(global.desert<=0)or(instance_exists(BaseEnemy)=0) //end of sushi time
 	{
+		if((instance_exists(BaseEnemy)=0))
+		{
+			with(Player)
+			{
+				men+=1
+				instance_create_depth(x,y-32,depth+1,scorenumbers,{value:"1UP"})
+			}
+		}
 		with(bubble){visible=1}
 		with(particle)
 		{
@@ -79,12 +95,12 @@ if(global.desert>0)
 		var avoidme = instance_nearest(x,y,Player)
 		spawnenemy(walllayer)
 		var restrainingorder = 300
-		x=(irandom_range(1,38)*32)+8
-		y=(irandom_range(1,21)*32)+8
-		while place_meeting(x,y,walllayer) or place_meeting(x,y,SpawningEnemy) or place_meeting(x,y,BaseEnemy) or (abs(x-avoidme.x)<restrainingorder or abs((x+(room_width/2))-avoidme.x)<restrainingorder)
+		x=(irandom_range(1,19)*64)+32
+		y=(irandom_range(1,10)*64)+32
+		while place_meeting(x,y,walllayer) or place_meeting(x,y,SpawningEnemy) or place_meeting(x,y,sponge) or place_meeting(x,y,BaseEnemy) or distance_to_object(avoidme)<200
 		{
-			x=(irandom_range(1,38)*32)+8
-			y=(irandom_range(1,21)*32)+8
+			x=(irandom_range(1,19)*64)+32
+			y=(irandom_range(1,10)*64)+32
 		}
 	}
 }

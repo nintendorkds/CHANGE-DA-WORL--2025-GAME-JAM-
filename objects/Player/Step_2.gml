@@ -19,14 +19,14 @@ if(here=noone){here=instance_place(x,y+(anotherme*room_height),BaseEnemy)}
 
 if(here!=noone)
 {
+	if(jumps!=maxjumps)
+	{
+		jumps=maxjumps
+		flash=6
+	}
 	if(global.desert>0)
 	{
 		instance_create_depth(here.x,here.y,here.depth-1,particle,{image_xscale:choose(-1,1)})
-		if(jumps!=maxjumps)
-		{
-			jumps=maxjumps
-			flash=6
-		}
 		with here
 		{
 			instance_create_depth(x,y,depth,corpse,
@@ -46,6 +46,7 @@ if(here!=noone)
 		var val = 100*lavacombo
 		global.points+=val
 		points+=val
+		global.pointhop=10
 		instance_create_depth(here.x,here.y,depth+1,scorenumbers,{value:val})
 		instance_destroy(here)
 	}
@@ -60,8 +61,8 @@ if(here!=noone)
 			{
 				play_sound(soundhurt,.3)
 				var dir = point_direction(x,y,here.x,here.y)
-				xvel=lengthdir_x(-12,dir)
-				yvel=lengthdir_y(-12,dir)
+				xvel+=lengthdir_x(-8,dir)
+				yvel+=lengthdir_y(-8,dir)
 				jumping=0
 				men-=1
 				anim=0
@@ -73,6 +74,10 @@ if(here!=noone)
 				play_sound(sounddeath,.1)
 				instance_create_depth(x,y,depth,corpse,{sprite_index:StardieSpr,red,green,blue,xvel,yvel:yvel-8})
 				instance_change(quitter,0)
+				if(instance_number(Player)<=0)
+				{
+					with(musicbox){audio_stop_sound(stopsound)}
+				}
 			}
 		}
 	}

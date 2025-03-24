@@ -62,8 +62,8 @@ if(white)and(vel<2)and(floor(image_index)=2)
 	}
 }
 
-if(vel<3.5)and(floor(image_index)=2)
+if(vel<3)and(floor(image_index)=2)
 {
-	vel=3.5
+	vel=3
 }
 vel*=.95

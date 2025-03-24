@@ -1,0 +1,1 @@
+stopsound = audio_play_sound(track,0,1,.7)

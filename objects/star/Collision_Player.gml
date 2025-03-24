@@ -20,8 +20,10 @@ if(global.desert<=0)
 	other.lavacombo+=1
 	var val = 100*other.lavacombo
 	other.points+=val
+	global.pointhop=10
 	global.points+=val
 	instance_create_depth(x+16,y,depth+1,scorenumbers,{value:val})
+	instance_create_depth(x,y,depth-999,staradd,{red,blue,green})
 	
 	//increments stars
 	if(global.stars mod 8 = 7)
@@ -51,12 +53,12 @@ if(global.desert<=0)
 		var avoidme = instance_nearest(x,y,Player)
 		spawnenemy(walllayer)
 		var restrainingorder = 300
-		x=(irandom_range(1,38)*32)+8
-		y=(irandom_range(1,21)*32)+8
-		while place_meeting(x,y,walllayer) or place_meeting(x,y,SpawningEnemy) or place_meeting(x,y,BaseEnemy) or (abs(x-avoidme.x)<restrainingorder or abs((x+(room_width/2))-avoidme.x)<restrainingorder)
+		x=(irandom_range(1,19)*64)+32
+		y=(irandom_range(1,10)*64)+32
+		while place_meeting(x,y,walllayer) or place_meeting(x,y,SpawningEnemy) or place_meeting(x,y,sponge) or place_meeting(x,y,BaseEnemy) or distance_to_object(avoidme)<200
 		{
-			x=(irandom_range(1,38)*32)+8
-			y=(irandom_range(1,21)*32)+8
+			x=(irandom_range(1,19)*64)+32
+			y=(irandom_range(1,10)*64)+32
 		}
 	}
 }

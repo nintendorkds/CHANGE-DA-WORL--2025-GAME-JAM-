@@ -1,23 +1,14 @@
 if(other.yvel>=0)
 {
+	play_sound(soundbounce,.25)
 	if(other.anim=2)
 	{
 		other.anim=0
 		other.charge=0
 	}
 	instance_create_depth(other.x,other.y+32,depth-1,particle,{image_xscale:choose(-1,1)})
-	if(other.jump)and(other.anim=0)
-	{
-		other.yvel=-24
-		other.jumping=1
-		other.jumpbuffer=0
-		squishvel=.5
-	}
-	else
-	{
-		other.yvel=-16
-		squishvel=.25
-	}
+	other.yvel=-20
+	squishvel=.25
 	if(other.jumps!=other.maxjumps)
 	{
 		other.jumps=other.maxjumps

@@ -10,3 +10,4 @@ global.pointhop=0
 global.starhop=0
 var lol = layer_background_get_id("Background")
 layer_background_blend(lol,c_black)
+window_set_size(browser_width, browser_height );

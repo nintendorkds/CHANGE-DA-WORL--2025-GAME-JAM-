@@ -1,9 +1,12 @@
+//web version only
+//window_set_size(browser_width, browser_height );
+
 var walllayer = layer_tilemap_get_id("Tiles_1")
 mask_index=StaridleSpr
 //iframes
 if(iframes>0)
 {
-	if iframes = 115
+	if iframes = 85
 	{
 		var lol = layer_background_get_id("Background")
 		layer_background_blend(lol,c_black)
@@ -333,6 +336,7 @@ switch anim
 			}
 			else
 			{
+				play_sound(soundnuhuh,.2)
 				xvel=image_xscale*6
 				anim=0
 				charge=0

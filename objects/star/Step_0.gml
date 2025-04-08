@@ -51,6 +51,8 @@ if(global.desert>0)
 	{
 		if((instance_exists(BaseEnemy)=0))
 		{
+			play_sound(soundapplause,.2)
+			play_sound(soundcombocomplete,.2)
 			with(Player)
 			{
 				men+=1

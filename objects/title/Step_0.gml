@@ -1,6 +1,7 @@
+//web version only
+//window_set_size(browser_width, browser_height );
 var dontmakeme = []
 var contnum = 0
-window_set_size(browser_width, browser_height );
 with(Player)
 {
 	array_push(dontmakeme,controller)
@@ -11,7 +12,14 @@ if(keyboard_check(vk_anykey))
 {
 	if(array_contains(dontmakeme,contnum)=0)
 	{
-		instance_create_depth(x,y,depth,Player,{controller:contnum})
+		if(instance_exists(Player))
+		{
+			instance_create_depth(x,y,depth,Player,{controller:contnum,green:hsv_to_rgb(irandom_range(0,360),random_range(0,1),random_range(0,1)),red:hsv_to_rgb(irandom_range(0,360),random_range(0,1),random_range(0,1)),blue:hsv_to_rgb(irandom_range(0,360),random_range(0,1),random_range(0,1))})
+		}
+		else
+		{
+			instance_create_depth(x,y,depth,Player,{controller:contnum})
+		}
 	}
 }
 
@@ -25,7 +33,14 @@ repeat 8
 	{
 		if(array_contains(dontmakeme,contnum)=0)
 		{
-			instance_create_depth(x,y,depth,Player,{controller:contnum})
+			if(instance_exists(Player))
+			{
+				instance_create_depth(x,y,depth,Player,{controller:contnum,green:hsv_to_rgb(irandom_range(0,360),random_range(0,1),random_range(0,1)),red:hsv_to_rgb(irandom_range(0,360),random_range(0,1),random_range(0,1)),blue:hsv_to_rgb(irandom_range(0,360),random_range(0,1),random_range(0,1))})
+			}
+			else
+			{
+				instance_create_depth(x,y,depth,Player,{controller:contnum})
+			}
 		}
 	}
 	contnum+=1

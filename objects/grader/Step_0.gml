@@ -10,7 +10,6 @@ if(timer=360)
 		ini_write_real("ROOMSAVES", room_get_name(room), global.points)
 	}
 	ini_close()
-
 	room_goto(Title)
 }
 

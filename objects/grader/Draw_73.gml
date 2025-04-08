@@ -21,7 +21,7 @@ if timer>180
 	draw_set_font(BIGFONT)
 	var tempstring = "D - DOWNRIGHT BOTTOMFEEDER"
 	var tempcolor = c_red
-
+	
 	switch grade_get(global.points)
 	{
 		case 0:
@@ -51,6 +51,8 @@ if timer>180
 		tempstring = "W - WHALE WHO IS MENTALLY UNWELL"
 		var tempcolor = c_orange
 	}
+	draw_set_color(c_black)
+	draw_text((room_width/2)+random_range(-1,1),(room_height/2)+96+random_range(-1,1),tempstring)
 	draw_set_color(tempcolor)
 	draw_text((room_width/2)+random_range(-1,1),(room_height/2)+96+random_range(-1,1),tempstring)
 }

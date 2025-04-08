@@ -54,6 +54,21 @@ if(here!=noone)
 	{
 		if(iframes=0)
 		{
+			if(lavacombo>1)
+			{
+				if(lavacombo=64)
+				{
+					instance_create_depth(x,y-16,depth+1,scorenumbers,{value:"YEAH!"})
+					play_sound(soundcombocomplete,.1)
+					play_sound(soundapplause,.1)
+				}
+				else
+				{
+					instance_create_depth(x,y-16,depth+1,scorenumbers,{value:"oh..."})
+					play_sound(soundcomboend,.2)
+				}
+			}
+			lavacombo=0
 			instance_create_depth(x,y,depth-1,particle,{image_xscale:choose(-1,1),green:[1,0,0]})
 			var lol = layer_background_get_id("Background")
 			layer_background_blend(lol,make_color_rgb(30,0,0))
@@ -67,7 +82,7 @@ if(here!=noone)
 				men-=1
 				anim=0
 				charge=0
-				iframes=120
+				iframes=100
 			}
 			else
 			{

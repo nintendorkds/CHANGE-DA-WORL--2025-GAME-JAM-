@@ -14,6 +14,8 @@
     {"name":"inst_30EEA3F3","path":"rooms/Title/Title.yy",},
     {"name":"inst_F8BE9B3","path":"rooms/Title/Title.yy",},
     {"name":"inst_273FD7D0","path":"rooms/Title/Title.yy",},
+    {"name":"inst_1C7267A9","path":"rooms/Title/Title.yy",},
+    {"name":"inst_567E216D","path":"rooms/Title/Title.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -36,6 +38,10 @@
         {"$GMRInstance":"v1","%Name":"inst_273FD7D0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_273FD7D0","objectId":{"name":"door","path":"objects/door/door.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"door","path":"objects/door/door.yy",},"propertyId":{"name":"myroom","path":"objects/door/door.yy",},"resource":{"name":"SEAMOUNT","path":"rooms/SEAMOUNT/SEAMOUNT.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"SEAMOUNT",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":448.0,"y":640.0,},
+        {"$GMRInstance":"v1","%Name":"inst_1C7267A9","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1C7267A9","objectId":{"name":"door","path":"objects/door/door.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"door","path":"objects/door/door.yy",},"propertyId":{"name":"myroom","path":"objects/door/door.yy",},"resource":{"name":"ISTHMUS","path":"rooms/ISTHMUS/ISTHMUS.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"ISTHMUS",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":800.0,"y":640.0,},
+        {"$GMRInstance":"v1","%Name":"inst_567E216D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_567E216D","objectId":{"name":"titlecard","path":"objects/titlecard/titlecard.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":360.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":12,"SerialiseWidth":20,"TileCompressedData":[
           11,31,28,30,31,28,30,28,29,29,28,28,-3,29,6,30,29,31,30,28,29,-12,0,1,-2147483648,-8,0,-2,-2147483648,

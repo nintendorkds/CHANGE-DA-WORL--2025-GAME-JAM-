@@ -7,5 +7,6 @@ with(Player)
 	anim=0
 	charge=0
 	jumps=maxjumps
+	men=3
 }
 instance_destroy()

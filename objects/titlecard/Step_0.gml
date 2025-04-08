@@ -1,0 +1,17 @@
+if(kicked)
+{
+	x+=xvel
+	y+=yvel
+	yvel+=.5
+	image_angle+=2
+	if(y>2000){instance_destroy()}
+}
+else
+{
+	if(instance_exists(Player))
+	{
+		play_sound(soundhit,.5,1)
+		instance_create_depth(x,y,depth-1,particle)
+		kicked=1
+	}
+}
